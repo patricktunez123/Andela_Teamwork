@@ -1,57 +1,154 @@
-body{
-    margin: 0;
-    padding: 0;
+*{
     font-family: sans-serif;
-    background: #34495e;
-  }
-  .box{
-    width: 300px;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background: #191919;
-    text-align: center;
-  }
-  .box h1{
-    color: white;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-  .box input[type = "text"],.box input[type = "password"]{
-    border:0;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid #3498db;
-    padding: 14px 10px;
-    width: 200px;
-    outline: none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s;
-  }
-  .box input[type = "text"]:focus,.box input[type = "password"]:focus{
-    width: 280px;
-    border-color: #2ecc71;
-  }
-  .box input[type = "submit"]{
-    border:0;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 2px solid #2ecc71;
-    padding: 14px 40px;
-    outline: none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25s;
+    box-sizing: border-box;
+}
+
+body{
+    background:#fff;
+    font-family: sans-serif;
+}
+
+.form-modal{
+    position:relative;
+    width:450px;
+    height:auto;
+    margin-top:4em;
+    left:50%;
+    transform:translateX(-50%);
+    background:#fff;
+    border-radius: 20px;
+    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.1)
+}
+
+.form-modal button{
     cursor: pointer;
-  }
-  .box input[type = "submit"]:hover{
-    background: #2ecc71;
-  }
-  
+    position: relative;
+    text-transform: capitalize;
+    font-size:1em;
+    z-index: 2;
+    outline: none;
+    background:#fff;
+    transition:0.2s;
+}
+
+.form-modal .btn{
+    border-radius: 20px;
+    border:none;
+    font-weight: bold;
+    font-size:1.2em;
+    padding:0.8em 1em 0.8em 1em!important;
+    transition:0.5s;
+    border:1px solid #ebebeb;
+    margin-bottom:0.5em;
+    margin-top:0.5em;
+}
+
+.form-modal .login , .form-modal .signup{
+    background:#68af5b;
+    color:#fff;
+}
+
+.form-modal .login:hover , .form-modal .signup:hover{
+    background:#3baa27;
+}
+
+.form-toggle{
+    position: relative;
+    width:100%;
+    height:auto;
+}
+
+.form-toggle button{
+    width:50%;
+    float:left;
+    padding:1.5em;
+    margin-bottom:1.5em;
+    border: none;
+    border-radius:0px 0px 0px 0px;
+    transition: 0.2s;
+    font-size:1.1em;
+    font-weight: bold;
+}
+
+#login-toggle{
+    background:#68af5b;
+    color:#ffff;
+}
+
+.form-modal form{
+    position: relative;
+    width:90%;
+    height:auto;
+    left:50%;
+    transform:translateX(-50%);  
+}
+
+#login-form , #signup-form{
+    position:relative;
+    width:100%;
+    height:auto;
+    padding-bottom:1em;
+}
+#login-form ::placeholder{
+    color: gray;
+}
+#signup-form ::placeholder{
+    color: gray;
+}
+#signup-form{
+    display: none;
+}
+
+
+#login-form button , #signup-form button{
+    width:100%;
+    margin-top:0.5em;
+    padding:0.6em;
+}
+
+.form-modal input, select{
+    position: relative;
+    width:100%;
+    padding:1.2em 1.7em 1.2em 1.7em;
+    margin-top:0.6em;
+    margin-bottom:0.6em;
+    border-radius: 20px;
+    border: 1px solid #2ecc71;
+    background:#ebebeb;
+    outline:none;
+    font-weight: bold;
+    transition:0.1s;
+}
+
+.form-modal input, select:focus , .form-modal input, select:active{
+    transform:scaleX(1.02);
+}
+
+.form-modal p{
+    font-size:15px;
+    font-weight: 30px;
+}
+
+.form-modal p a{
+    color:#68af5b;
+    text-decoration: none;
+    transition:0.2s;
+}
+
+.form-modal p a:hover{
+    color:#222;
+}
+@media only screen and (max-width:500px){
+    .form-modal{
+        width:100%;
+    }
+    .form-toggle{
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width:400px){
+    i{
+        display: none!important;
+    }
+}
