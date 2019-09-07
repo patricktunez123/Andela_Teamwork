@@ -1,0 +1,68 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after { box-sizing: inherit; margin: 0; padding: 0;}
+
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+  input {
+    width: 100%;
+    padding: 20px;
+  }
+  .above {
+    background-color:#EFF6F9;
+    border: 1px solid #F7F7F7;
+    border-color: #2ecc71;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .frm-search {
+    max-width: 400px;
+    margin: 50px auto;
+  }
+  input.art-search {
+    margin: 0;
+    text-align: center;
+    outline: 0;
+    border: 1px solid #F7F7F7;
+    border-top: none;
+    width: 100%;
+    left: -10%;
+    top: 10px;
+    z-index: 2;
+    border-radius: 0px 0px 5px 5px;
+    font-size: 13px;
+    border-color: #2ecc71;
+    
+  }
+  .art-search::-moz-placeholder {
+    color: #999;
+    opacity: 1;
+  }
+  .art-search:-ms-input-placeholder {
+    color: #999;
+  }
+  .art-search::-webkit-input-placeholder {
+    color: #999;
+  }
+  .list {
+    margin:60px auto;
+  }
+  
+  .list li {
+    background: white;
+    list-style: none;
+    border-bottom: 1px solid #D4820B;
+    margin: 0;
+    padding: 21px;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+  }
+ 
+  
+  
