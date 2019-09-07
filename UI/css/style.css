@@ -90,7 +90,8 @@ body{
     padding-bottom:1em;
 }
 #login-form ::placeholder{
-    color: gray;
+    color: #b1aaaa;
+    font-style: italic;
 }
 #signup-form ::placeholder{
     color: gray;
