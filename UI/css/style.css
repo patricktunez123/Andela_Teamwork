@@ -94,7 +94,8 @@ body{
     font-style: italic;
 }
 #signup-form ::placeholder{
-    color: gray;
+    color: #b1aaaa;
+    font-style: italic;
 }
 #signup-form{
     display: none;
@@ -105,6 +106,7 @@ body{
     width:100%;
     margin-top:0.5em;
     padding:0.6em;
+    font-size: 16px;
 }
 
 .form-modal input, select{
@@ -124,7 +126,10 @@ body{
 .form-modal input, select:focus , .form-modal input, select:active{
     transform:scaleX(1.02);
 }
-
+#select-gender .option{
+    background:#ebebeb;
+    border-radius: 20px;
+}
 .form-modal p{
     font-size:15px;
     font-weight: 30px;
