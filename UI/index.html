@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Internal Social Network" />
+	<meta name="author" content="Tunezerwane Patrick" />
+    <title>Teamwork</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="form-modal">  
+        <div class="form-toggle">
+            <button id="login-toggle" onclick="toggleLogin()">log in</button>
+            <button id="signup-toggle" onclick="toggleSignup()">sign up</button>
+        </div>
+        <div id="login-form">
+            <form >
+                <input type="text" placeholder="Enter email"/>
+                <input type="password" placeholder="Enter password"/>
+                <a href="home.html"><button type="button" class="btn login">login</button></a>
+                <p><a href="javascript:void(0)">Forgot password?</a></p>
+                <hr/>
+            </form>
+        </div>
+    
+        <div id="signup-form">
+            <form>
+                <input type="text" placeholder="Enter your First Name"/>
+                <input type="text" placeholder="Enter your Last Name"/>
+                <input type="email" placeholder="Enter your email"/>
+                <input type="password" placeholder="Create password"/>
+                <select name="" id="">
+                    <option class="option" value="male"> Male</option>
+                    <option class="option" value="female"> Female</option>
+                </select>
+                <input type="text" placeholder="Job Role"/> 
+                <input type="text" placeholder="Department"/>
+                <input type="text" placeholder="Address"/> 
+                <button type="button" class="btn signup">create account</button>
+                <hr/>
+            </form>
+        </div>
+    </div>
+<script src="js/main.js"></script>
+</body>
+</html>
