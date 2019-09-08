@@ -54,7 +54,9 @@ ul li a {
   padding: 0.625em;
   text-decoration: none;
 }
-
+.flagged{
+  color: rgb(207, 3, 3);
+}
 ul li a:hover {
   color: #4876FF;
 }
@@ -221,6 +223,9 @@ footer{
     padding: 0.625em;
     text-decoration: none;
   }  
+  .flagged{
+    color: rgb(207, 3, 3);
+  }
 
 }
 
@@ -244,6 +249,9 @@ ul li .buttons {
     padding: 0.625em;
     text-decoration: none;
       } 
+ ul li .flagged{
+    color: rgb(207, 3, 3);
+}
 .list li {
     background: white;
     list-style: none;
@@ -259,6 +267,7 @@ ul li .buttons {
     padding: 20px;
     font-weight: 600;
 }
+
 }
 
 
