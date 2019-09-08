@@ -238,8 +238,7 @@ footer{
 
   ul li a {
     background: #1c1e1f;
-    color: grey;
-    font-weight: 600;
+    color: #fff;
     border-bottom: 1px solid #111;
     display: block;
     width: 10.250em;
