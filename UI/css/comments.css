@@ -242,7 +242,7 @@ footer{
 ul li a {
     background: #1c1e1f;
     color: #fff;
-    border-bottom: 1px solid #111;
+    border-radius: 10px;
     display: block;
     width: 10.250em;
     padding: 0.625em;
