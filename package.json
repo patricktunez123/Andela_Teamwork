@@ -1,0 +1,19 @@
+{
+  "name": "andela_teamwork",
+  "version": "1.0.0",
+  "description": "Andela Developer Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patricktunez123/Andela_Teamwork.git"
+  },
+  "author": "Patrick TUNEZERWANE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patricktunez123/Andela_Teamwork/issues"
+  },
+  "homepage": "https://github.com/patricktunez123/Andela_Teamwork#readme"
+}
