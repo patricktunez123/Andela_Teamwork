@@ -185,7 +185,7 @@ footer{
   font-weight: bold;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 812px){
 
   /*side bar medium and smartphone*/
 
@@ -229,8 +229,8 @@ footer{
 
 }
 
-@media screen and (max-width: 564px){  
- 
+@media screen and (max-width: 651px){  
+
 #sidebar {
     background: #151718;
     width: 11.500em;
