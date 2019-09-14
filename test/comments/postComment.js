@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-const config = require('config');
+require('dotenv').config();
 const chai = require('chai');
 const { describe, it } = require('mocha');
 const http = require('chai-http');
@@ -33,7 +33,9 @@ describe('When a user is posting a comment ', () => {
     department: 'ICT',
     address: 'Kigali',
   };
-  const token = jwt.sign(payload, config.get('jwtPrivateKey'), { expiresIn: '1d' });
+  const token = process.env.JWT_KEY;
+
+  jwt.sign(payload, token, { expiresIn: '1d' });
 
   it('should  be able to post if a token is given ', (done) => {
     chai.request(app)

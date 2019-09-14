@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-const config = require('config');
+require('dotenv').config();
 const chai = require('chai');
 const { describe, it } = require('mocha');
 const http = require('chai-http');
@@ -33,7 +33,7 @@ describe('When admin needs to delete inappropriate article ', () => {
     is_admin: false,
   };
 
-  const token = jwt.sign(Userpayload, config.get('jwtPrivateKey'), { expiresIn: '1d' });
+  const token = jwt.sign(Userpayload, process.env.JWT_KEY, { expiresIn: '1d' });
 
   it('should not be able to delete inappropriate article if not an admin', (done) => {
     chai.request(app)
@@ -59,7 +59,7 @@ describe('When admin needs to delete inappropriate article ', () => {
     is_admin: true,
   };
 
-  const token2 = jwt.sign(Adminpayload, config.get('jwtPrivateKey'), { expiresIn: '1d' });
+  const token2 = jwt.sign(Adminpayload, process.env.JWT_KEY, { expiresIn: '1d' });
 
   it('should be able to delete inappropriate article if you are the admin', (done) => {
     chai.request(app)

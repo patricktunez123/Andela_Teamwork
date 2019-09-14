@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-const config = require('config');
+require('dotenv').config();
 const chai = require('chai');
 const { describe, it } = require('mocha');
 const http = require('chai-http');
@@ -33,7 +33,9 @@ describe('When a user needs to delete an article ', () => {
     is_admin: false,
   };
 
-  const token = jwt.sign(Userpayload, config.get('jwtPrivateKey'), { expiresIn: '1d' });
+  const token = process.env.JWT_KEY;
+
+  jwt.sign(Userpayload, token, { expiresIn: '1d' });
 
   it('should not be able to delete an article if not the owner', (done) => {
     chai.request(app)

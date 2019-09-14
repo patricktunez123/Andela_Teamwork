@@ -1,6 +1,6 @@
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable linebreak-style */
-const config = require('config');
+require('dotenv').config();
 const chai = require('chai');
 const { describe, it } = require('mocha');
 const http = require('chai-http');
@@ -34,7 +34,9 @@ describe('When a user wants to view most recently posted articles ', () => {
     is_admin: false,
   };
 
-  const token = jwt.sign(payload, config.get('jwtPrivateKey'), { expiresIn: '1d' });
+  const token = process.env.JWT_KEY;
+
+  jwt.sign(payload, token, { expiresIn: '1d' });
 
   it('should be able to view most recently posted articles', (done) => {
     chai.request(app)

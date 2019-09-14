@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const chai = require('chai');
 const { describe, it } = require('mocha');
 const http = require('chai-http');
