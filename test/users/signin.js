@@ -48,7 +48,7 @@ describe('When a user is trying to login ', () => {
       .post('/api/v1/auth/signin')
       .send({
         email: 'patrick@gmail.com',
-        password: 'kgl123',
+        password: 'kgl1234',
       })
       .end((err, res) => {
         res.expect.have.status(404);
@@ -64,8 +64,8 @@ describe('When a user is trying to login ', () => {
     chai.request(app)
       .post('/api/v1/auth/signin')
       .send({
-        email: 'patrick@gmail.com',
-        password: 'kg12',
+        email: 'patrick10@gmail.com',
+        password: 'kg12345',
       })
       .end((err, res) => {
         res.expect.have.status(404);
