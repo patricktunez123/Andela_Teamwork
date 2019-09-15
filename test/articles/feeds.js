@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 const app = require('../../server/index');
 
 chai.use(http);
-chai.expect();
+chai.should();
 
 describe('When a user wants to view most recently posted articles ', () => {
   it('should not be able to view most recently posted articles when no token provided', (done) => {
@@ -16,7 +16,7 @@ describe('When a user wants to view most recently posted articles ', () => {
       .get('/api/v1/feeds')
       .send()
       .end((err, res) => {
-        res.expect.have.status(401);
+        res.should.have.status(401);
         done();
       });
   });
@@ -44,11 +44,11 @@ describe('When a user wants to view most recently posted articles ', () => {
       .set('x-auth-token', token)
       .send()
       .end((err, res) => {
-        res.expect.have.status(200);
-        // res.expect.have.status('success');
-        res.expect.be.an('array');
-        res.body.expect.have.property('status').eql(200);
-        res.body.expect.have.property('data');
+        res.should.have.status(200);
+        // res.should.have.status('success');
+        res.should.be.an('array');
+        res.body.should.have.property('status').eql(200);
+        res.body.should.have.property('data');
         done();
       });
   });

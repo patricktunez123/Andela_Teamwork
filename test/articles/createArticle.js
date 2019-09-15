@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const app = require('../../server/index');
 
 chai.use(http);
-chai.expect();
+chai.should();
 
 describe('When a user is creating an article ', () => {
   it('should not be able to post an article if a token was not provided', (done) => {
@@ -18,7 +18,7 @@ describe('When a user is creating an article ', () => {
         article: 'Hello my best friends ! today i just want share with you this nice quote!:Self-belief and hard work will always earn you success.',
       })
       .end((err, res) => {
-        res.expect.have.status(401);
+        res.should.have.status(401);
         done();
       });
   });
@@ -47,11 +47,11 @@ describe('When a user is creating an article ', () => {
         article: 'Hello my best friends ! today i just want share with you this nice quote!:Self-belief and hard work will always earn you success.',
       })
       .end((err, res) => {
-        res.expect.have.status(200);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(200);
-        res.body.expect.have.property('message');
-        res.body.expect.have.property('data');
+        res.should.have.status(200);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(200);
+        res.body.should.have.property('message');
+        res.body.should.have.property('data');
         done();
       });
   });
@@ -65,10 +65,10 @@ describe('When a user is creating an article ', () => {
         article: 'Hello my best friends ! today i just want share with you this nice quote!:Self-belief and hard work will always earn you success.',
       })
       .end((err, res) => {
-        res.expect.have.status(400);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(400);
-        res.body.expect.have.property('error');
+        res.should.have.status(400);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(400);
+        res.body.should.have.property('error');
         done();
       });
   });
