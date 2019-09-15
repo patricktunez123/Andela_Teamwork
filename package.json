@@ -4,8 +4,9 @@
   "description": "Andela Developer Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha --exit ./test/*/*.js",
+    "test": "nyc mocha ./test/*/*.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint js"
   },
   "repository": {
