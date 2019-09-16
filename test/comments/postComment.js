@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const app = require('../../server/index');
 
 chai.use(http);
-chai.expect();
+chai.should();
 
 describe('When a user is posting a comment ', () => {
   it('should not be able to post a comment if a token was not provided', (done) => {
@@ -17,7 +17,7 @@ describe('When a user is posting a comment ', () => {
         comment: 'This is my comment on this post',
       })
       .end((err, res) => {
-        res.expect.have.status(401);
+        res.should.have.status(401);
         done();
       });
   });
@@ -45,11 +45,11 @@ describe('When a user is posting a comment ', () => {
         comment: 'This is my comment on this post',
       })
       .end((err, res) => {
-        res.expect.have.status(201);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(201);
-        res.body.expect.have.property('message');
-        res.body.expect.have.property('data');
+        res.should.have.status(201);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(201);
+        res.body.should.have.property('message');
+        res.body.should.have.property('data');
         done();
       });
   });
@@ -62,10 +62,10 @@ describe('When a user is posting a comment ', () => {
         comment: 'This is my comment on this post',
       })
       .end((err, res) => {
-        res.expect.have.status(400);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(400);
-        res.body.expect.have.property('error');
+        res.should.have.status(400);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(400);
+        res.body.should.have.property('error');
         done();
       });
   });
@@ -78,10 +78,10 @@ describe('When a user is posting a comment ', () => {
         comment: 'This is my comment on this post',
       })
       .end((err, res) => {
-        res.expect.have.status(404);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(404);
-        res.body.expect.have.property('error');
+        res.should.have.status(404);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(404);
+        res.body.should.have.property('error');
         done();
       });
   });

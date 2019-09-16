@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 const app = require('../../server/index');
 
 chai.use(http);
-chai.expect();
+chai.should();
 
 describe('When a user wants to view an article ', () => {
   it('should not be able to view an article when no token provided', (done) => {
@@ -16,7 +16,7 @@ describe('When a user wants to view an article ', () => {
       .get('/api/v1/articles/1')
       .send()
       .end((err, res) => {
-        res.expect.have.status(401);
+        res.should.have.status(401);
         done();
       });
   });
@@ -44,10 +44,10 @@ describe('When a user wants to view an article ', () => {
       .set('x-auth-token', token)
       .send()
       .end((err, res) => {
-        res.expect.have.status(404);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(404);
-        res.body.expect.have.property('error');
+        res.should.have.status(404);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(404);
+        res.body.should.have.property('error');
         done();
       });
   }); 
@@ -58,10 +58,10 @@ describe('When a user wants to view an article ', () => {
       .set('x-auth-token', token)
       .send()
       .end((err, res) => {
-        res.expect.have.status(200);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(200);
-        res.body.expect.have.property('data');
+        res.should.have.status(200);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(200);
+        res.body.should.have.property('data');
         done();
       });
   });

@@ -5,7 +5,7 @@ const http = require('chai-http');
 const app = require('../../server/index');
 
 chai.use(http);
-chai.expect();
+chai.should();
 
 describe('When a user is trying to login ', () => {
   it('should be able to login', (done) => {
@@ -16,12 +16,12 @@ describe('When a user is trying to login ', () => {
         password: 'kgl123',
       })
       .end((err, res) => {
-        res.expect.have.status(200);
-        res.expect.be.an('object');
-        res.expect.have.property('status').eql(200);
-        res.body.expect.have.status(200);
-        res.body.expect.have.property('message');
-        res.body.expect.have.property('data');
+        res.should.have.status(200);
+        res.should.be.an('object');
+        res.should.have.property('status').eql(200);
+        res.body.should.have.status(200);
+        res.body.should.have.property('message');
+        res.body.should.have.property('data');
         done();
       });
   });
@@ -34,11 +34,11 @@ describe('When a user is trying to login ', () => {
         password: 'kgl1234',
       })
       .end((err, res) => {
-        res.expect.have.status(404);
-        res.expect.be.an('object');
-        res.expect.have.property('status').eql(404);
-        res.body.expect.have.property('error');
-        res.body.expect.have.status(404);
+        res.should.have.status(404);
+        res.should.be.an('object');
+        res.should.have.property('status').eql(404);
+        res.body.should.have.property('error');
+        res.body.should.have.status(404);
         done();
       });
   });
@@ -48,14 +48,14 @@ describe('When a user is trying to login ', () => {
       .post('/api/v1/auth/signin')
       .send({
         email: 'patrick@gmail.com',
-        password: 'kgl123',
+        password: 'kgl1234',
       })
       .end((err, res) => {
-        res.expect.have.status(404);
-        res.expect.be.an('object');
-        res.expect.have.property('status').eql(404);
-        res.body.expect.have.property('error');
-        res.body.expect.have.status(404);
+        res.should.have.status(404);
+        res.should.be.an('object');
+        res.should.have.property('status').eql(404);
+        res.body.should.have.property('error');
+        res.body.should.have.status(404);
         done();
       });
   });
@@ -64,15 +64,15 @@ describe('When a user is trying to login ', () => {
     chai.request(app)
       .post('/api/v1/auth/signin')
       .send({
-        email: 'patrick@gmail.com',
-        password: 'kg12',
+        email: 'patrick10@gmail.com',
+        password: 'kg12345',
       })
       .end((err, res) => {
-        res.expect.have.status(404);
-        res.expect.be.an('object');
-        res.expect.have.property('status').eql(404);
-        res.body.expect.have.property('error');
-        res.body.expect.have.status(404);
+        res.should.have.status(404);
+        res.should.be.an('object');
+        res.should.have.property('status').eql(404);
+        res.body.should.have.property('error');
+        res.body.should.have.status(404);
         done();
       });
   });

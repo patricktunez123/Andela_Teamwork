@@ -5,7 +5,7 @@ const http = require('chai-http');
 const app = require('../../server/index');
 
 chai.use(http);
-chai.expect();
+chai.should();
 
 describe('When a user is signing up', () => {
   it('user should be able to signup', (done) => {
@@ -23,11 +23,11 @@ describe('When a user is signing up', () => {
         is_admin: false,
       })
       .end((err, res) => {
-        res.expect.have.status(201);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(201);
-        res.body.expect.have.property('message');
-        res.body.expect.have.property('data');
+        res.should.have.status(201);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(201);
+        res.body.should.have.property('message');
+        res.body.should.have.property('data');
         done();
       });
   });
@@ -48,10 +48,10 @@ describe('When a user is signing up', () => {
         is_admin: false,
       })
       .end((err, res) => {
-        res.expect.have.status(400);
-        res.expect.be.an('object');
-        res.expect.have.property('status').eql(400);
-        res.expect.have.property('error');
+        res.should.have.status(400);
+        res.should.be.an('object');
+        res.should.have.property('status').eql(400);
+        res.should.have.property('error');
         done();
       });
   });
@@ -70,10 +70,10 @@ describe('When a user is signing up', () => {
         address: 'Kenya',
         is_admin: false,
       }).end((err, res) => {
-        res.expect.have.status(409);
-        res.expect.be.an('object');
-        res.expect.have.property('status').eql(409);
-        res.expect.have.property('error');
+        res.should.have.status(409);
+        res.should.be.an('object');
+        res.should.have.property('status').eql(409);
+        res.should.have.property('error');
         done();
       });
   });
