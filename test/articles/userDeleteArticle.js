@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-const config = require('config');
+require('dotenv').config();
 const chai = require('chai');
 const { describe, it } = require('mocha');
 const http = require('chai-http');
@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const app = require('../../server/index');
 
 chai.use(http);
-chai.expect();
+chai.should();
 
 describe('When a user needs to delete an article ', () => {
   it('should not be able to delete an article when no token provided', (done) => {
@@ -15,7 +15,7 @@ describe('When a user needs to delete an article ', () => {
       .delete('/api/v1/articles/1')
       .send()
       .end((err, res) => {
-        res.expect.have.status(401);
+        res.should.have.status(401);
         done();
       });
   });
@@ -33,7 +33,9 @@ describe('When a user needs to delete an article ', () => {
     is_admin: false,
   };
 
-  const token = jwt.sign(Userpayload, config.get('jwtPrivateKey'), { expiresIn: '1d' });
+  const token = process.env.JWT_KEY;
+
+  jwt.sign(Userpayload, token, { expiresIn: '1d' });
 
   it('should not be able to delete an article if not the owner', (done) => {
     chai.request(app)
@@ -41,10 +43,10 @@ describe('When a user needs to delete an article ', () => {
       .set('x-auth-token', token)
       .send()
       .end((err, res) => {
-        res.expect.have.status(403);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(403);
-        res.body.expect.have.property('error');
+        res.should.have.status(403);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(403);
+        res.body.should.have.property('error');
         done();
       });
   });
@@ -55,10 +57,10 @@ describe('When a user needs to delete an article ', () => {
       .set('x-auth-token', token)
       .send()
       .end((err, res) => {
-        res.expect.have.status(404);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(404);
-        res.body.expect.have.property('error');
+        res.should.have.status(404);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(404);
+        res.body.should.have.property('error');
         done();
       });
   });
@@ -69,10 +71,10 @@ describe('When a user needs to delete an article ', () => {
       .set('x-auth-token', token)
       .send()
       .end((err, res) => {
-        res.expect.have.status(204);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(204);
-        res.body.expect.have.property('message');
+        res.should.have.status(204);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(204);
+        res.body.should.have.property('message');
         done();
       });
   });

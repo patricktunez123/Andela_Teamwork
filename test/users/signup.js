@@ -1,10 +1,11 @@
+/* eslint-disable linebreak-style */
 const { describe, it } = require('mocha');
 const chai = require('chai');
 const http = require('chai-http');
 const app = require('../../server/index');
 
 chai.use(http);
-chai.expect();
+chai.should();
 
 describe('When a user is signing up', () => {
   it('user should be able to signup', (done) => {
@@ -13,8 +14,8 @@ describe('When a user is signing up', () => {
       .send({
         first_name: 'Patrick',
         last_name: 'Tunezerwane',
-        email: 'pat@gmail.com',
-        password: 'kgl123',
+        email: 'tp1@gmail.com',
+        password: 'kgl12345',
         gender: 'Male',
         jobRole: 'Manager',
         department: 'ICT',
@@ -22,11 +23,11 @@ describe('When a user is signing up', () => {
         is_admin: false,
       })
       .end((err, res) => {
-        res.expect.have.status(201);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(201);
-        res.body.expect.have.property('message');
-        res.body.expect.have.property('data');
+        res.should.have.status(201);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(201);
+        res.body.should.have.property('message');
+        res.body.should.have.property('data');
         done();
       });
   });
@@ -36,21 +37,21 @@ describe('When a user is signing up', () => {
     chai.request(app)
       .post('/api/v1/auth/signup')
       .send({
-        first_name: 'Patrick2',
-        last_name: 'Tunezerwane2',
-        email: 'pat2@gmail.com',
-        password: 'kgl2',
+        first_name: '',
+        last_name: 'Tunezerwane',
+        email: 'tp1@gmail.com',
+        password: 'kgl12345',
         gender: 'Male',
-        jobRole: 'Teacher',
-        department: 'ET',
-        address: 'Rwanda',
+        jobRole: 'Manager',
+        department: 'ICT',
+        address: 'Kigali',
         is_admin: false,
       })
       .end((err, res) => {
-        res.expect.have.status(400);
-        res.expect.be.an('object');
-        res.expect.have.property('status').eql(400);
-        res.expect.have.property('error');
+        res.should.have.status(400);
+        res.should.be.an('object');
+        res.should.have.property('status').eql(400);
+        res.should.have.property('error');
         done();
       });
   });
@@ -59,20 +60,20 @@ describe('When a user is signing up', () => {
     chai.request(app)
       .post('/api/v1/auth/signup')
       .send({
-        first_name: 'Patrick2',
-        last_name: 'Tunezerwane2',
-        email: 'pat2@gmail.com',
-        password: 'kgl2',
+        first_name: 'Patrick',
+        last_name: 'Tunezerwane',
+        email: 'tp@gmail.com',
+        password: 'kgl12345',
         gender: 'Male',
-        jobRole: 'Teacher',
-        department: 'Accountancy',
-        address: 'Kenya',
+        jobRole: 'Manager',
+        department: 'ICT',
+        address: 'Kigali',
         is_admin: false,
       }).end((err, res) => {
-        res.expect.have.status(409);
-        res.expect.be.an('object');
-        res.expect.have.property('status').eql(409);
-        res.expect.have.property('error');
+        res.should.have.status(400);
+        res.should.be.an('object');
+        res.should.have.property('status').eql(400);
+        res.should.have.property('error');
         done();
       });
   });

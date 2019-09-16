@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-const config = require('config');
+require('dotenv').config();
 const chai = require('chai');
 const { describe, it } = require('mocha');
 const http = require('chai-http');
@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const app = require('../../server/index');
 
 chai.use(http);
-chai.expect();
+chai.should();
 
 describe('When admin needs to delete inappropriate article ', () => {
   it('should not be able to delete inappropriate article when no token provided', (done) => {
@@ -15,7 +15,7 @@ describe('When admin needs to delete inappropriate article ', () => {
       .delete('/api/v1/articles/1')
       .send()
       .end((err, res) => {
-        res.expect.have.status(401);
+        res.should.have.status(401);
         done();
       });
   });
@@ -33,7 +33,7 @@ describe('When admin needs to delete inappropriate article ', () => {
     is_admin: false,
   };
 
-  const token = jwt.sign(Userpayload, config.get('jwtPrivateKey'), { expiresIn: '1d' });
+  const token = jwt.sign(Userpayload, process.env.JWT_KEY, { expiresIn: '1d' });
 
   it('should not be able to delete inappropriate article if not an admin', (done) => {
     chai.request(app)
@@ -41,10 +41,10 @@ describe('When admin needs to delete inappropriate article ', () => {
       .set('x-auth-token', token)
       .send()
       .end((err, res) => {
-        res.expect.have.status(403);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(403);
-        res.body.expect.have.property('error');
+        res.should.have.status(403);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(403);
+        res.body.should.have.property('error');
         done();
       });
   });
@@ -59,7 +59,7 @@ describe('When admin needs to delete inappropriate article ', () => {
     is_admin: true,
   };
 
-  const token2 = jwt.sign(Adminpayload, config.get('jwtPrivateKey'), { expiresIn: '1d' });
+  const token2 = jwt.sign(Adminpayload, process.env.JWT_KEY, { expiresIn: '1d' });
 
   it('should be able to delete inappropriate article if you are the admin', (done) => {
     chai.request(app)
@@ -67,10 +67,10 @@ describe('When admin needs to delete inappropriate article ', () => {
       .set('x-auth-token', token2)
       .send()
       .end((err, res) => {
-        res.expect.have.status(200);
-        res.expect.be.an('object');
-        res.body.expect.have.property('status').eql(200);
-        res.body.expect.have.property('message');
+        res.should.have.status(200);
+        res.should.be.an('object');
+        res.body.should.have.property('status').eql(200);
+        res.body.should.have.property('message');
         done();
       });
   });
