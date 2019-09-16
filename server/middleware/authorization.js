@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const jwt = require('jsonwebtoken');
 const ENV = require('dotenv');
 
@@ -9,7 +10,7 @@ const authorize = (req, res, next) => {
   if (!token) {
     return res.status(401).json({
       status: 401,
-      error: 'No token, Please provide your token',
+      error: 'Access denied. No token provided, Please provide your token',
     });
   }
 
