@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable linebreak-style */
 const ENV = require('dotenv');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -23,7 +25,7 @@ const userLogin = (req, res) => {
   if (!checkUser) {
     return res.status(400).json({
       status: 400,
-      error: 'Email or password does not exist',
+      error: 'Incorrect email or password',
 
     });
   }
@@ -33,7 +35,7 @@ const userLogin = (req, res) => {
   if (!checkPassword) {
     return res.status(400).json({
       status: 400,
-      error: 'Email or password does not exist',
+      error: 'Incorrect email or password',
     });
   }
 
@@ -42,23 +44,29 @@ const userLogin = (req, res) => {
     first_name: checkUser.first_name,
     last_name: checkUser.last_name,
     email: checkUser.email,
+    gender: checkUser.gender,
+    jobRole: checkUser.jobRole,
+    department: checkUser.department,
     address: checkUser.address,
     is_admin: checkUser.is_admin,
   };
 
 
-  const token = process.env.JWT_KEY;
-
-  jwt.sign(loginPayload, token, { expiresIn: '1d' });
+  const token = jwt.sign(loginPayload, process.env.JWT_KEY, { expiresIn: '1d' });
 
   res.status(200).json({
     status: 200,
+    message: 'User is successfully logged in',
     data: {
       token,
       id: checkUser.id,
       first_name: checkUser.first_name,
       last_name: checkUser.last_name,
       email: checkUser.email,
+      gender: checkUser.gender,
+      jobRole: checkUser.jobRole,
+      department: checkUser.department,
+      address: checkUser.address,
     },
   });
 };
