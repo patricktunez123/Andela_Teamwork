@@ -12,8 +12,8 @@ describe('When a user is trying to login ', () => {
     chai.request(app)
       .post('/api/v1/auth/signin')
       .send({
-        email: 'patrick@gmail.com',
-        password: 'kgl123',
+        email: 'tp@gmail.com',
+        password: 'kgl12345',
       })
       .end((err, res) => {
         res.should.have.status(200);
@@ -30,15 +30,15 @@ describe('When a user is trying to login ', () => {
     chai.request(app)
       .post('/api/v1/auth/signin')
       .send({
-        email: 'pat@gmail.com',
-        password: 'kgl1234',
+        email: 'patrick@gmail.com',
+        password: 'kgl12345',
       })
       .end((err, res) => {
-        res.should.have.status(404);
+        res.should.have.status(400);
         res.should.be.an('object');
-        res.should.have.property('status').eql(404);
+        res.should.have.property('status').eql(400);
         res.body.should.have.property('error');
-        res.body.should.have.status(404);
+        res.body.should.have.status(400);
         done();
       });
   });
@@ -47,15 +47,15 @@ describe('When a user is trying to login ', () => {
     chai.request(app)
       .post('/api/v1/auth/signin')
       .send({
-        email: 'patrick@gmail.com',
-        password: 'kgl1234',
+        email: 'tp@gmail.com',
+        password: 'kgl',
       })
       .end((err, res) => {
-        res.should.have.status(404);
+        res.should.have.status(400);
         res.should.be.an('object');
-        res.should.have.property('status').eql(404);
+        res.should.have.property('status').eql(400);
         res.body.should.have.property('error');
-        res.body.should.have.status(404);
+        res.body.should.have.status(400);
         done();
       });
   });
@@ -65,14 +65,14 @@ describe('When a user is trying to login ', () => {
       .post('/api/v1/auth/signin')
       .send({
         email: 'patrick10@gmail.com',
-        password: 'kg12345',
+        password: 'kgl',
       })
       .end((err, res) => {
-        res.should.have.status(404);
+        res.should.have.status(400);
         res.should.be.an('object');
-        res.should.have.property('status').eql(404);
+        res.should.have.property('status').eql(400);
         res.body.should.have.property('error');
-        res.body.should.have.status(404);
+        res.body.should.have.status(400);
         done();
       });
   });

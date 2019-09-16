@@ -14,8 +14,8 @@ describe('When a user is signing up', () => {
       .send({
         first_name: 'Patrick',
         last_name: 'Tunezerwane',
-        email: 'pat@gmail.com',
-        password: 'kgl123',
+        email: 'tp1@gmail.com',
+        password: 'kgl12345',
         gender: 'Male',
         jobRole: 'Manager',
         department: 'ICT',
@@ -37,14 +37,14 @@ describe('When a user is signing up', () => {
     chai.request(app)
       .post('/api/v1/auth/signup')
       .send({
-        first_name: 'Patrick2',
-        last_name: 'Tunezerwane2',
-        email: 'pat2@gmail.com',
-        password: 'kgl2',
+        first_name: '',
+        last_name: 'Tunezerwane',
+        email: 'tp1@gmail.com',
+        password: 'kgl12345',
         gender: 'Male',
-        jobRole: 'Teacher',
-        department: 'ET',
-        address: 'Rwanda',
+        jobRole: 'Manager',
+        department: 'ICT',
+        address: 'Kigali',
         is_admin: false,
       })
       .end((err, res) => {
@@ -60,19 +60,19 @@ describe('When a user is signing up', () => {
     chai.request(app)
       .post('/api/v1/auth/signup')
       .send({
-        first_name: 'Patrick2',
-        last_name: 'Tunezerwane2',
-        email: 'pat2@gmail.com',
-        password: 'kgl2',
+        first_name: 'Patrick',
+        last_name: 'Tunezerwane',
+        email: 'tp@gmail.com',
+        password: 'kgl12345',
         gender: 'Male',
-        jobRole: 'Teacher',
-        department: 'Accountancy',
-        address: 'Kenya',
+        jobRole: 'Manager',
+        department: 'ICT',
+        address: 'Kigali',
         is_admin: false,
       }).end((err, res) => {
-        res.should.have.status(409);
+        res.should.have.status(400);
         res.should.be.an('object');
-        res.should.have.property('status').eql(409);
+        res.should.have.property('status').eql(400);
         res.should.have.property('error');
         done();
       });
