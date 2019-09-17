@@ -25,28 +25,22 @@ describe('When a user wants to view most recently posted articles ', () => {
     id: 1,
     first_name: 'Patrick',
     last_name: 'Tunezerwane',
-    email: 'pat@gmail.com',
-    password: 'kgl123',
+    email: 'tp@gmail.com',
+    password: '$2b$10$utvkNCuMn9aEsKCtnKDrfeKGuaElyOt.4bI3Seo3cFpsq8Ep.O0du',
     gender: 'Male',
     jobRole: 'Manager',
     department: 'ICT',
     address: 'Kigali',
     is_admin: false,
   };
-
-  const token = process.env.JWT_KEY;
-
-  jwt.sign(payload, token, { expiresIn: '1d' });
+  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '1d' });
 
   it('should be able to view most recently posted articles', (done) => {
     chai.request(app)
       .get('/api/v1/feeds')
       .set('x-auth-token', token)
-      .send()
       .end((err, res) => {
         res.should.have.status(200);
-        // res.should.have.status('success');
-        res.should.be.an('array');
         res.body.should.have.property('status').eql(200);
         res.body.should.have.property('data');
         done();
