@@ -27,16 +27,15 @@ describe('When a user is creating an article ', () => {
     id: 1,
     first_name: 'Patrick',
     last_name: 'Tunezerwane',
-    email: 'pat@gmail.com',
-    password: 'kgl123',
+    email: 'tp@gmail.com',
+    password: '$2b$10$utvkNCuMn9aEsKCtnKDrfeKGuaElyOt.4bI3Seo3cFpsq8Ep.O0du',
     gender: 'Male',
     jobRole: 'Manager',
     department: 'ICT',
     address: 'Kigali',
+    is_admin: false,
   };
-  const token = process.env.JWT_KEY;
-
-  jwt.sign(payload, token, { expiresIn: '1d' });
+  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '1d' });
 
   it('should  be able to post if a token is given ', (done) => {
     chai.request(app)
@@ -61,7 +60,7 @@ describe('When a user is creating an article ', () => {
       .post('/api/v1/articles')
       .set('x-auth-token', token)
       .send({
-        title: 'Today',
+        title: '',
         article: 'Hello my best friends ! today i just want share with you this nice quote!:Self-belief and hard work will always earn you success.',
       })
       .end((err, res) => {

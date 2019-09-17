@@ -1,10 +1,9 @@
 /* eslint-disable linebreak-style */
 const express = require('express');
-const signup = require('../controllers/signup');
-
+const feeds = require('../controllers/feeds');
+const auth = require('../middleware/authorization');
 
 const router = express.Router();
 
-router.post('/', signup);
-
+router.get('/', auth, feeds);
 module.exports = router;

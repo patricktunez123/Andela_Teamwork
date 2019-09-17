@@ -25,22 +25,19 @@ describe('When a user wants to view an article ', () => {
     id: 1,
     first_name: 'Patrick',
     last_name: 'Tunezerwane',
-    email: 'pat@gmail.com',
-    password: 'kgl123',
+    email: 'tp@gmail.com',
+    password: '$2b$10$utvkNCuMn9aEsKCtnKDrfeKGuaElyOt.4bI3Seo3cFpsq8Ep.O0du',
     gender: 'Male',
     jobRole: 'Manager',
     department: 'ICT',
     address: 'Kigali',
     is_admin: false,
   };
-
-  const token = process.env.JWT_KEY;
-
-  jwt.sign(payload, token, { expiresIn: '1d' });
+  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '1d' });
 
   it('should not be able to view an article which is not available ', (done) => {
     chai.request(app)
-      .get('/api/v1/articles/30')
+      .get('/api/v1/articles/9000')
       .set('x-auth-token', token)
       .send()
       .end((err, res) => {
