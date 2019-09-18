@@ -1,0 +1,420 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Teamwork(Patrick-Tunez)",
+    "description": "",
+    "contact": {}
+  },
+  
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v1/auth/signup": {
+      "post": {
+        "description": "TODO: Create account here",
+        "summary": "Create user account",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ApiV1AuthSignupPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/registerrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/auth/signin": {
+      "post": {
+        "description": "TODO: Login here",
+        "summary": "Login",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ApiV1AuthSigninPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/loginrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/articles": {
+      "post": {
+        "description": "TODO: Post an article",
+        "summary": "Create an article",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ApiV1ArticlePost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/newpostarticlerequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/articles/1/comments": {
+      "post": {
+        "description": "TODO: Comment on other colleagues' article posts",
+        "summary": "Comment on other colleagues' article posts",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ApiV1CommentPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/makecomments"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+
+    "/api/v1/feeds": {
+      "get": {
+        "description": "TODO: View Most recently posted articles",
+        "summary": "Most recently posted articles",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ApiV1RecentlyArticlesGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/api/v1/articles/1": {
+      "get": {
+        "description": "TODO: View a specific article",
+        "summary": "View a specific article",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ApiV1Article1Get",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "TODO: Delete articles",
+        "summary": "Delete an article",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ApiV1Article1Delete",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "patch": {
+        "description": "TODO: Edit an article",
+        "summary": "Edit an article",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "ApiV1Article1Patch",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/editarticle"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "registerrequest": {
+      "title": "Create user account",
+      "example": {
+        "first_name": "Patrick",
+        "last_name": "Tunezerwane",
+        "email": "tp@gmail.com",
+        "password": "kgl12345",
+        "gender": "Male",
+        "jobRole": "Manager",
+        "department": "ICT",
+        "address": "Kigali",
+        "is_admin": false    
+      },
+      "type": "object",
+      "properties": {
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "jobRole": {
+          "type": "string"
+        },
+        "department": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "is_admin": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "first_name",
+        "last_name",
+        "email",
+        "password",
+        "gender",
+        "jobRole",
+        "department",
+        "address",
+        "is_admin"
+      ]
+    },
+    "loginrequest": {
+      "title": "Login",
+      "example": {
+        "email": "tp@gmail.com",
+        "password": "kgl12345"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "newpostarticlerequest": {
+      "title": "Create an article",
+      "example": {
+        "title": "Today It's cool!",
+        "article": "Hello My Best Friends ! Today I Just Want Share With You This Nice Quote!:Self-Belief And Hard Work Will Always Earn You Success."
+      },
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "article": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "article"
+      ]
+    },
+    "makecomments": {
+      "title": "Comment",
+      "example": {
+        "comment": "This is a good post for sure!"
+      },
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "comment"
+      ]
+    },
+    "editarticle": {
+      "title": "Edit article",
+      "example": {
+        "title": "This is an edited article",
+        "article":"Thank you for edit!, this is your edited article"
+      },
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "article": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "article"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
