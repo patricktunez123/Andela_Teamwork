@@ -35,7 +35,7 @@ describe('when a user is trying to update an article ', () => {
     address: 'Kigali',
     is_admin: false,
   };
-  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '1d' });
+  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '365d' });
 
   it('should not be able to update if there is an error in inputs', (done) => {
     chai.request(app)

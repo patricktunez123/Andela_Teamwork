@@ -32,7 +32,7 @@ describe('When a user needs to delete an article ', () => {
     address: 'Kigali',
     is_admin: false,
   };
-  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '1d' });
+  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '365d' });
 
   // it('should not be able to delete an article if not the owner', (done) => {
   //   chai.request(app)

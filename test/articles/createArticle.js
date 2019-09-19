@@ -35,7 +35,7 @@ describe('When a user is creating an article ', () => {
     address: 'Kigali',
     is_admin: false,
   };
-  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '1d' });
+  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '365d' });
 
   it('should  be able to post if a token is given ', (done) => {
     chai.request(app)

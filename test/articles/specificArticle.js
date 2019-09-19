@@ -33,7 +33,7 @@ describe('When a user wants to view an article ', () => {
     address: 'Kigali',
     is_admin: false,
   };
-  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '1d' });
+  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '365d' });
 
   it('should not be able to view an article which is not available ', (done) => {
     chai.request(app)
