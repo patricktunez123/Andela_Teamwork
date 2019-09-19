@@ -33,7 +33,7 @@ describe('When admin needs to delete inappropriate article ', () => {
     is_admin: false,
   };
 
-  const token = jwt.sign(Userpayload, process.env.JWT_KEY, { expiresIn: '1d' });
+  const token = jwt.sign(Userpayload, process.env.JWT_KEY, { expiresIn: '365d' });
 
   // it('should not be able to delete inappropriate article if not an admin', (done) => {
   //   chai.request(app)
@@ -59,7 +59,7 @@ describe('When admin needs to delete inappropriate article ', () => {
     is_admin: true,
   };
 
-  const token2 = jwt.sign(Adminpayload, process.env.JWT_KEY, { expiresIn: '1d' });
+  const token2 = jwt.sign(Adminpayload, process.env.JWT_KEY, { expiresIn: '365d' });
 
   // it('should be able to delete inappropriate article if you are the admin', (done) => {
   //   chai.request(app)

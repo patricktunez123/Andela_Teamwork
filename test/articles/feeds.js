@@ -33,7 +33,7 @@ describe('When a user wants to view most recently posted articles ', () => {
     address: 'Kigali',
     is_admin: false,
   };
-  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '1d' });
+  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '365d' });
 
   it('should be able to view most recently posted articles', (done) => {
     chai.request(app)
