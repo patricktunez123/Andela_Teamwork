@@ -14,7 +14,7 @@ const newPostedArticle = (req, res) => {
   }
 
 
-  const paramId = parseInt(req.params.id);
+  const paramId = parseInt(req.params.id, 10);
 
   const checkPostedArticle = articlePosted.find((posted) => posted.id === paramId);
 
@@ -34,10 +34,9 @@ const newPostedArticle = (req, res) => {
   // }
 
   // checkPostedArticle.articleOwner = parseInt(req.body.id, 10);
-
+  checkPostedArticle.title = req.body.title;
+  checkPostedArticle.article = req.body.article;
   if (checkPostedArticle) {
-    // const index = articlePosted.indexOf(checkPostedArticle);
-
     return res.status(200).json({
       status: 200,
       message: 'article successfully edited',
@@ -46,8 +45,8 @@ const newPostedArticle = (req, res) => {
         articleOwner: checkPostedArticle.articleOwner,
         email: checkPostedArticle.email,
         created_on: checkPostedArticle.created_on,
-        title: req.body.title,
-        article: req.body.article,
+        title: checkPostedArticle.title,
+        article: checkPostedArticle.article,
       },
     });
   }
