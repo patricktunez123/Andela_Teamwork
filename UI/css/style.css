@@ -19,6 +19,10 @@ body{
     border-radius: 20px;
     box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.1)
 }
+.form-modal h1{
+    color: #1E1F26;
+    text-align: left;
+}
 
 .form-modal button{
     cursor: pointer;
@@ -44,12 +48,12 @@ body{
 }
 
 .form-modal .login , .form-modal .signup{
-    background:#68af5b;
+    background:#1E1F26;
     color:#fff;
 }
 
 .form-modal .login:hover , .form-modal .signup:hover{
-    background:#3baa27;
+    background:#333d42;
 }
 
 .form-toggle{
@@ -70,9 +74,9 @@ body{
     font-weight: bold;
 }
 
-#login-toggle{
-    background:#68af5b;
-    color:#ffff;
+#login{
+    background:#ebebeb;
+    color:#1E1F26;
 }
 
 .form-modal form{
@@ -116,7 +120,7 @@ body{
     margin-top:0.6em;
     margin-bottom:0.6em;
     border-radius: 20px;
-    border: 1px solid #2ecc71;
+    border: 1px solid #1E1F26;
     background:#ebebeb;
     outline:none;
     font-weight: bold;
@@ -136,25 +140,20 @@ body{
 }
 
 .form-modal p a{
-    color:#68af5b;
+    color:#1E1F26;
     text-decoration: none;
     transition:0.2s;
 }
 
 .form-modal p a:hover{
-    color:#222;
+    color:#333d42;
 }
+
 @media only screen and (max-width:500px){
     .form-modal{
         width:100%;
     }
     .form-toggle{
         font-size: 13px;
-    }
-}
-
-@media only screen and (max-width:400px){
-    i{
-        display: none!important;
     }
 }
