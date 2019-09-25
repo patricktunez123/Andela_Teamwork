@@ -19,7 +19,7 @@ header .highlight {
   font-weight: bold;
 }
 #sidebar {
-  background: #151718;
+  background: #1E1F26;
   width: 12.500em;
   min-height: 617px;
   display: block;
@@ -43,19 +43,18 @@ ul {
 ul li {
   list-style: none;
 }
-
 ul li a {
-  background: #1c1e1f;
+  background: #1E1F26;
   color: #fff;
+  border-bottom: 1px solid #111;
   text-align: left;
   display: block;
   width: 11.250em;
   padding: 0.625em;
   text-decoration: none;
 }
-
 ul li a:hover {
-  color: #4876FF;
+  background:#333d42;
 }
 
 #sidebar-btn {
@@ -102,7 +101,7 @@ ul li a:hover {
 
 header{
   height: 60px;
-  background-color: #68af5b;
+  background-color: #1E1F26;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -115,34 +114,33 @@ ul {
 
 #menu{
   margin: 0px; 
-  background-color: #3baa27;
+  background-color: #1E1F26;
   color: #fff;
   text-align: center;
   align-content: center;
   width: 150px;
-  height: 50px;
   margin-right: 5px;
-  border-radius: 50%;
+  border-radius: 50px;
 }
 
-.menu-ctn #menu ul{
+.menu-container #menu ul{
   text-align: center;
   width: 100%;
 }
 
-.menu-ctn > li{
+.menu-container > li{
   text-align: center;
   display: inline-block;
   background-color: #fff;
   transition: all 0.8s ease; 
   position: relative;
-
 }
-.menu-ctn li:hover{
+.menu-container li:hover{
   cursor: pointer;
+  background-color: #1E1F26;
 }
 #dropdown {
-  background: #151718;
+  background: #1E1F26;
   display: none;
   position: absolute;
   width: 100%;
@@ -166,20 +164,11 @@ ul {
 }
 
 #dropdown li:hover{
-  color: #4876FF;
+  background:#333d42;
 
 }
 #dropdown.active{
   display: block;
-}
-
-footer{
-  padding:10px;
-  margin-top:7px;
-  color: #68af5b;
-  background-color: rgb(219, 221, 240);
-  text-align: center;
-  font-weight: bold;
 }
 
 @media screen and (max-width: 700px){
@@ -202,7 +191,7 @@ footer{
    }
 
    #sidebar {
-	  background: #151718;
+	  background: #1E1F26;
 	  width: 11.500em;
 	  min-height: 96%;
 	  display: block;
@@ -212,7 +201,7 @@ footer{
 	}
 
   ul li a {
-    background: #1c1e1f;
+    background: #1E1F26;
     color: #fff;
     display: block;
     width: 10.250em;
@@ -225,7 +214,7 @@ footer{
 @media screen and (max-width: 564px){  
  
   #sidebar {
-      background: #151718;
+      background: #1E1F26;
       width: 11.500em;
       min-height: 96%;
       display: block;
@@ -234,7 +223,7 @@ footer{
       transition: left 0.3s linear;
     }
   ul li .buttons {
-      background: #1c1e1f;
+      background: #1E1F26;
       color: #fff;
       border-radius: 10px;
       display: block;
