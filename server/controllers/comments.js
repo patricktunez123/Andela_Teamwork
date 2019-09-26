@@ -14,7 +14,7 @@ const newComment = (req, res) => {
   }
 
 
-  const paramId = parseInt(req.params.id);
+  const paramId = parseInt(req.params.id, 10);
 
   const checkPostedArticle = articlePosted.find((posted) => posted.id === paramId);
 
@@ -34,7 +34,19 @@ const newComment = (req, res) => {
   // }
 
   // checkPostedArticle.articleOwner = parseInt(req.body.id, 10);
-
+  var commentId = 0;
+  if (checkPostedArticle.comments.length === 0) commentId = 1;
+  else commentId = parseInt(checkPostedArticle.comments.length + 1, 10);
+  checkPostedArticle.comments.comment = req.body.comment;
+  checkPostedArticle.comments.authorId = checkPostedArticle.authorEmailId;
+  const author = checkPostedArticle.comments.authorId;
+  const c = checkPostedArticle.comments.comment;
+  const cmt = {
+    commentId,
+    authorEmailId: author,
+    comment: c,
+  };
+  checkPostedArticle.comments.push(cmt);
   return res.status(201).json({
     status: 201,
     message: 'relevant-success-message',
@@ -42,7 +54,9 @@ const newComment = (req, res) => {
       created_on: checkPostedArticle.created_on,
       title: checkPostedArticle.title,
       article: checkPostedArticle.article,
-      comment: req.body.comment,
+      comments: [
+        cmt,
+      ],
     },
   });
 };
