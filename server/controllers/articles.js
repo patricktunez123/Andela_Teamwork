@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
 const moment = require('moment');
-const users = require('../models/signup');
 const postValidation = require('../helpers/articlePost');
 const articlePost = require('../models/articles');
 
