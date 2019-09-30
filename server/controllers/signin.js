@@ -3,23 +3,11 @@
 const ENV = require('dotenv');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const loginValidation = require('../helpers/signin');
 const users = require('../models/signup');
 
 ENV.config();
 
 const userLogin = (req, res) => {
-  const { error } = loginValidation.validation(req.body);
-
-  if (error) {
-    res.status(400).json({
-      status: 400,
-      error: 'Incorrect email or password',
-    });
-
-    return;
-  }
-
   const checkUser = users.find((user) => user.email === req.body.email);
 
   if (!checkUser) {
