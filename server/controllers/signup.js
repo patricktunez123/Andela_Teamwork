@@ -71,16 +71,6 @@ const signup = (req, res) => {
     message: 'User created successfully',
     data: {
       token,
-      id: _id,
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      email: req.body.email,
-      password,
-      gender: req.body.gender,
-      jobRole: req.body.jobRole,
-      department: req.body.department,
-      address: req.body.address,
-      is_admin: newUser.is_admin,
     },
   });
 };

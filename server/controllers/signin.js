@@ -14,7 +14,7 @@ const userLogin = (req, res) => {
   if (error) {
     res.status(400).json({
       status: 400,
-      error: error.details[0].message,
+      error: 'Incorrect email or password',
     });
 
     return;
@@ -59,14 +59,6 @@ const userLogin = (req, res) => {
     message: 'User is successfully logged in',
     data: {
       token,
-      id: checkUser.id,
-      first_name: checkUser.first_name,
-      last_name: checkUser.last_name,
-      email: checkUser.email,
-      gender: checkUser.gender,
-      jobRole: checkUser.jobRole,
-      department: checkUser.department,
-      address: checkUser.address,
     },
   });
 };
