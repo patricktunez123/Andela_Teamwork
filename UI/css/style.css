@@ -8,7 +8,7 @@ body{
     font-family: sans-serif;
 }
 
-.form-modal{
+.container{
     position:relative;
     width:450px;
     height:auto;
@@ -16,18 +16,16 @@ body{
     left:50%;
     transform:translateX(-50%);
     background:#fff;
-    border-radius: 20px;
-    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.1)
+    border-radius: 3px;
+    border: 1px solid #7FDBFF;
 }
-.form-modal h1{
+.container h1, h3{
     color: #1E1F26;
-    text-align: left;
+    text-align: center;
 }
-
-.form-modal button{
+.container button{
     cursor: pointer;
     position: relative;
-    text-transform: capitalize;
     font-size:1em;
     z-index: 2;
     outline: none;
@@ -35,10 +33,9 @@ body{
     transition:0.2s;
 }
 
-.form-modal .btn{
-    border-radius: 20px;
+.container .btn{
+    border-radius: 3px;
     border:none;
-    font-weight: bold;
     font-size:1.2em;
     padding:0.8em 1em 0.8em 1em!important;
     transition:0.5s;
@@ -47,12 +44,12 @@ body{
     margin-top:0.5em;
 }
 
-.form-modal .login , .form-modal .signup{
+.container .login , .container .signup{
     background:#1E1F26;
     color:#fff;
 }
 
-.form-modal .login:hover , .form-modal .signup:hover{
+.container .login:hover , .container .signup:hover{
     background:#333d42;
 }
 
@@ -68,18 +65,16 @@ body{
     padding:1.5em;
     margin-bottom:1.5em;
     border: none;
-    border-radius:0px 0px 0px 0px;
     transition: 0.2s;
     font-size:1.1em;
-    font-weight: bold;
 }
 
 #login{
-    background:#ebebeb;
+    background:#7FDBFF;
     color:#1E1F26;
 }
 
-.form-modal form{
+.container form{
     position: relative;
     width:90%;
     height:auto;
@@ -113,44 +108,43 @@ body{
     font-size: 16px;
 }
 
-.form-modal input, select{
+.container input, select{
     position: relative;
     width:100%;
     padding:1.2em 1.7em 1.2em 1.7em;
     margin-top:0.6em;
     margin-bottom:0.6em;
-    border-radius: 20px;
-    border: 1px solid #1E1F26;
+    border-radius: 3px;
+    border: 1px solid #7FDBFF;
     background:#ebebeb;
     outline:none;
-    font-weight: bold;
     transition:0.1s;
 }
 
-.form-modal input, select:focus , .form-modal input, select:active{
+.container input, select:focus , .container input, select:active{
     transform:scaleX(1.02);
 }
 #select-gender .option{
     background:#ebebeb;
-    border-radius: 20px;
+    border-radius: 3px;
 }
-.form-modal p{
+.container p{
     font-size:15px;
     font-weight: 30px;
 }
 
-.form-modal p a{
+.container p a{
     color:#1E1F26;
     text-decoration: none;
     transition:0.2s;
 }
 
-.form-modal p a:hover{
+.container p a:hover{
     color:#333d42;
 }
 
 @media only screen and (max-width:500px){
-    .form-modal{
+    .container{
         width:100%;
     }
     .form-toggle{

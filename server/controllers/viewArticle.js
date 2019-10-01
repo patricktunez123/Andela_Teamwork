@@ -1,9 +1,9 @@
 /* eslint-disable linebreak-style */
-const _ = require('lodash');
+// const _ = require('lodash');
 const articlesArray = require('../models/articles');
 
 const viewArticle = (req, res) => {
-  const article = articlesArray.find((ar) => ar.id === parseInt(req.params.id));
+  const article = articlesArray.find((ar) => ar.id === parseInt(req.params.id, 10));
   if (!article) {
     return res.status(404).json({
       status: 404,

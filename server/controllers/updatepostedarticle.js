@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 const articlePosted = require('../models/articles');
-const updatepostedarticle = require('../helpers/updatepostedarticle');
+const updatepostedarticle = require('../helpers/articlePost');
 
 
 const newPostedArticle = (req, res) => {

@@ -3,11 +3,10 @@
 	padding: 0px;
 	font-family: sans-serif;
 }
- #branding h1{
+ #brand h1{
   margin: 0;
 }
-/*branding*/
-#branding{
+#brand{
     float: none;
     text-align: center;
     width: 25%;
@@ -18,18 +17,18 @@ header .highlight {
   color: #fff;
   font-weight: bold;
 }
-#sidebar {
+#sideMenus {
   background: #1E1F26;
   width: 12.500em;
-  min-height: 617px;
+  height: 100%;
   display: block;
   position: absolute;
   left: 0em;
   top: 60px;
   transition: left 0.3s linear;
-  box-shadow: 0px 8px 16px 0px;
+  box-shadow: 0px 7px 15px 0px;
 }
-#sidebar.visible {
+#sideMenus.visible {
   left: 0.000em;
 }
 nav {
@@ -54,14 +53,60 @@ ul li a {
   padding: 0.625em;
   text-decoration: none;
 }
-.flagged{
-  color: #fff;
-}
 ul li a:hover {
   background:#333d42;
 }
-
-#sidebar-btn {
+ol li a {
+  list-style: none;
+  text-decoration: none;
+  color: #1E1F26;
+}
+ol li h2{
+  font-size: 13px;
+  color: #333d42;
+  margin-top: 10px;
+}
+ol li h3{
+  font-size: 10px;
+  color: #666;
+  margin-top: 10px;
+}
+ol li h4{
+  margin-bottom: 20px;
+}
+ol li img{
+  width: 100px;
+  height: 100px;
+}
+ol li h5{
+  color:#333d42;
+  margin-top: 15px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+}
+ol li input{
+  padding:1.2em 1.7em 1.2em 1.7em;
+  border: 1px solid #7FDBFF;
+}
+ol li button{
+  cursor: pointer;
+  padding:1.2em 1.7em 1.2em 1.7em;
+  border: 1px solid #7FDBFF;
+}
+.content .userInfo{
+  color:#333d42;
+  margin-top: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  padding-left: 20px;
+}
+ol h6{
+  margin-top: 20px;
+  margin: 0;
+  padding: 20px;
+  font-size: 12px;
+}
+#sideMenus-btn {
   vertical-align: middle;
   width: 1.563em;
   height: 1.250em;
@@ -73,7 +118,7 @@ ul li a:hover {
   display: none;
 }
 
-#sidebar-btn span {
+#sideMenus-btn span {
   height: 0.063em;
   background: #282828;
   margin-bottom: 0.313em;
@@ -92,17 +137,14 @@ ul li a:hover {
   .list li {
     background: white;
     list-style: none;
-    border-bottom: 1px solid #D4820B;
-    margin: 0;
+    border-bottom: 1px solid #7FDBFF;
     padding: 21px;
-    display: flex;
+    margin: 0;
+    padding: 20px;
+    display: block;
     justify-content: space-between;
     text-transform: capitalize;
   }
-
-
-/*top bar*/
-
 header{
   height: 60px;
   background-color: #1E1F26;
@@ -150,7 +192,7 @@ ul {
   width: 100%;
   z-index: 1;
   text-align: center;
-  left: 5px;
+  left: 0px;
   top: 70%;
   margin-top: 20px;
 
@@ -176,14 +218,11 @@ ul {
 }
 
 @media screen and (max-width: 812px){
-
-  /*side bar medium and smartphone*/
-
-	#sidebar-btn{
+	#sideMenus-btn{
 	  display: inline-block;
 	}
 
-	#sidebar{
+	#sideMenus{
 		left: -11.47em;
 	} 
 
@@ -191,13 +230,12 @@ ul {
       margin-left:30px; 
       margin-top: 50px;
       padding: 20px;
-      /* overflow-x: scroll; */
    }
 
-   #sidebar {
+   #sideMenus {
 	  background: #1E1F26;
 	  width: 11.500em;
-	  min-height: 96%;
+	  max-height: 100%;
 	  display: block;
 	  position: absolute;
 	  top: 60.2px;
@@ -213,18 +251,15 @@ ul {
     padding: 0.625em;
     text-decoration: none;
   }  
-  .flagged{
-    color: #fff;
-  }
 
 }
 
 @media screen and (max-width: 651px){  
 
-#sidebar {
+#sideMenus {
     background: #1E1F26;
     width: 11.500em;
-    min-height: 96%;
+    min-height: 100%;
     display: block;
     position: absolute;
     top: 60.2px;
@@ -239,24 +274,16 @@ ul li .buttons {
     padding: 0.625em;
     text-decoration: none;
       } 
- ul li .flagged{
-    color: #fff;
-}
 .list li {
     background: white;
     list-style: none;
-    border-bottom: 1px solid #D4820B;
+    border-bottom: 1px solid #7FDBFF;
     margin: 0;
     padding: 20px;
     display: block;
     justify-content: space-between;
     text-transform: capitalize;
     }
-.comment-field{
-    width: 10.250em;
-    padding: 20px;
-    font-weight: 600;
-}
 
 }
 

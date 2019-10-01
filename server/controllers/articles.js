@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
 const moment = require('moment');
-const users = require('../models/signup');
 const postValidation = require('../helpers/articlePost');
 const articlePost = require('../models/articles');
 
@@ -24,9 +23,12 @@ const newArticlePost = (req, res) => {
   const newArticle = {
     id: _id,
     created_on: moment().format('LL'),
-    email: req.user.email,
+    authorEmailId: req.user.email,
     title: req.body.title,
     article: req.body.article,
+    comments: [
+
+    ],
   };
 
   articlePost.push(newArticle);
@@ -37,7 +39,7 @@ const newArticlePost = (req, res) => {
     data: {
       id: newArticle.id,
       created_on: moment().format('LL'),
-      email: req.user.email,
+      authorEmailId: req.user.email,
       title: req.body.title,
       article: req.body.article,
     },

@@ -10,20 +10,19 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="form-modal">
+    <div class="container">
         <h1>Team<span>Work</span> app</h1>
         <hr>
         <div class="form-toggle">
-            <button id="login" onclick="Login()">log in</button>
-            <button id="signup" onclick="Signup()">sign up</button>
+            <button id="login" onclick="Login()">Log in</button>
+            <button id="signup" onclick="Signup()">Sign up</button>
         </div>
         <div id="login-form">
             <form >
-                <input type="text" placeholder="Enter email"/>
-                <input type="password" placeholder="Enter password"/>
-                <a href="comments.html"><button type="button" class="btn login">login</button></a>
-                <p><a href="admin.html">Admin</a></p>
-                <hr/>
+                <input type="text" required placeholder="Enter email"/>
+                <input type="password" required placeholder="Enter password"/>
+                <a href="html/recentlyArticles.html"><button type="button" class="btn login">login</button></a>
+                <p><a href="html/adminLogin.html">Admin</a></p>
             </form>
         </div>
     
@@ -41,7 +40,6 @@
                 <input type="text" placeholder="Address"/>
                 <input type="password" placeholder="Create a password"/>
                 <a href="index.html"><button type="button" class="btn signup">create account</button></a>
-                <hr/>
             </form>
         </div>
     </div>

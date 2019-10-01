@@ -18,10 +18,10 @@ header .highlight {
   color: #fff;
   font-weight: bold;
 }
-#sidebar {
+#sideMenus {
   background: #1E1F26;
   width: 12.500em;
-  min-height: 617px;
+  min-height: 100%;
   display: block;
   position: absolute;
   left: 0em;
@@ -29,7 +29,7 @@ header .highlight {
   transition: left 0.3s linear;
   box-shadow: 0px 8px 16px 0px;
 }
-#sidebar.visible {
+#sideMenus.visible {
   left: 0.000em;
 }
 nav {
@@ -59,7 +59,7 @@ ul li a:hover {
   background:#333d42;
 }
 
-#sidebar-btn {
+#sideMenus-btn {
   vertical-align: middle;
   width: 1.563em;
   height: 1.250em;
@@ -71,7 +71,7 @@ ul li a:hover {
   display: none;
 }
 
-#sidebar-btn span {
+#sideMenus-btn span {
   height: 0.063em;
   background: #282828;
   margin-bottom: 0.313em;
@@ -168,6 +168,9 @@ ul {
   text-align: right;
   height: 400px;
 }
+.content .post a{
+  text-decoration: none;
+}
 
 
 .content .post {
@@ -184,7 +187,8 @@ ul {
     height: 80%;
     border-radius: 3px;
     border: 1px solid #1E1F26;
-    font-size: 20px;
+    font-size: 12px;
+    text-align: center;
 
 }
  
@@ -192,16 +196,32 @@ ul {
   font: 15px/1.5 Arial, Helvetica, sans-serif ;
   text-align: center;
 }
+.content .btn{
+  cursor: pointer;
+  border-radius: 3px;
+  border:none;
+  font-size:12px;
+  transition:0.5s;
+  margin-bottom:0.5em;
+  margin-top:0.5em;
+  background:#1E1F26;
+  color:#fff;
+  
+}
+
+.content .post td .btn{
+  width: 100px;
+}
 
 @media screen and (max-width: 700px){
 
   /*side bar medium and smartphone*/
 
-	#sidebar-btn{
+	#sideMenus-btn{
 	  display: inline-block;
 	}
 
-	#sidebar{
+	#sideMenus{
 		left: -11.47em;
 	} 
 
@@ -212,7 +232,7 @@ ul {
       /* overflow-x: scroll; */
    }
 
-   #sidebar {
+   #sideMenus {
 	  background: #1E1F26;
 	  width: 11.500em;
 	  min-height: 96%;
