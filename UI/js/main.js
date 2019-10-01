@@ -2,15 +2,15 @@
 function Signup() {
   document.getElementById('login').style.backgroundColor = '#fff';
   document.getElementById('login').style.color = '#1E1F26';
-  document.getElementById('signup').style.backgroundColor = '#ebebeb';
-  document.getElementById('signup').style.color = '#1E1F26';
+  document.getElementById('signup').style.backgroundColor = '#7FDBFF';
+  document.getElementById('signup').style.color = '#fff';
   document.getElementById('login-form').style.display = 'none';
   document.getElementById('signup-form').style.display = 'block';
 }
  
 function Login() {
-  document.getElementById('login').style.backgroundColor = '#ebebeb';
-  document.getElementById('login').style.color = '#1E1F26';
+  document.getElementById('login').style.backgroundColor = '#7FDBFF';
+  document.getElementById('login').style.color = '#fff';
   document.getElementById('signup').style.backgroundColor = '#fff';
   document.getElementById('signup').style.color = '#1E1F26';
   document.getElementById('signup-form').style.display = 'none';
@@ -19,13 +19,11 @@ function Login() {
  
 
 window.onload = function() {
-  /* side Bar */
-  document.getElementById('sidebar-btn')
+  document.getElementById('sideMenus-btn')
     .addEventListener('click', function() {
-      document.getElementById('sidebar')
+      document.getElementById('sideMenus')
         .classList.toggle('visible');
     });
-  /* Top Bar */
 	    document.getElementById('menu')
 	     .addEventListener('click',openMenu);
 };

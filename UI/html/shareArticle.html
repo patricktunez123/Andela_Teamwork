@@ -7,7 +7,9 @@
     <meta name="description" content="Internal Social Network" />
 	<meta name="author" content="Tunezerwane Patrick" />
     <title>Teamwork</title>
-    <link rel="stylesheet" href="css/shareArticle.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <link rel="stylesheet" href="../css/shareArticle.css">
 </head>
 <body>
         <header>
@@ -19,26 +21,24 @@
                     <span>Patrick</span>
                     <ul  id="dropdown">
                       <!-- <li>Profile</li> -->
-                      <a href="index.html"> <li>Log Out</li> </a>
+                      <a href="../index.html"> <li>Log Out</li> </a>
                     </ul>
                   </li>
                 </ul>
             
               </header>
-                <div id="sidebar">
+                <div id="sideMenus">
             
                   <nav>
                     <ul>
-                        <li><a href="shareArticle.html" class="active">Share an article</a></li>
-                        <li><a href="comments.html">View all articles</a></li>
-                        <li><a href="recentlyArticles.html">Recently posted articles</a></li>
-                        <li><a href="editArticle.html">Edit my articles</a></li>
-                        <li><a href="deleteArticle.html">Delete my articles</a></li>
-                        <li><a href="specificArticle.html">Search for article</a></li>
+                      <li><a href="shareArticle.html" class="active">Post an article</a></li>
+                      <li><a href="recentlyArticles.html">Recently posted articles</a></li>
+                      <li><a href="editArticle.html">Edit my articles</a></li>
+                      <li><a href="deleteArticle.html">Delete my articles</a></li>
                     </ul>
                   </nav>
             
-                  <div id="sidebar-btn">
+                  <div id="sideMenus-btn">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -50,29 +50,26 @@
             
                   <center>
                  <table class="post" >
-                    <tr>
+                  <tr>
                       <td colspan="2">
-                        <center>
-                        <h2 class="title">Post an article</h2>
-                        </center></td>
+                        <center><h2 class="title">Post an article</h2></center></td>
+                  </tr>
+                    <tr>
+                      <td><input type="text" placeholder="Title"></td>
                     </tr>
                     <tr>
-                      <td>Title &nbsp</td>
-                      <td><input type="text" name="" id="title"></td>
+                      <td> <textarea cols="30" rows="10" placeholder="Article"></textarea> </td>
                     </tr>
                     <tr>
-                      <td>Article &nbsp</td>
-                      <td> <textarea name="" id="article-body" cols="30" rows="10"></textarea> </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2"><input type="submit" name="sub" id="post" value="Post"></td>
+                      <td>
+                       <a href="./recentlyArticles.html">
+                          <input type="submit" class="btn" value="Post">
+                       </a> 
+                      </td>
                     </tr>
                   </table>
                 </center>
                 </div>
-                <!-- <footer>
-                  <p>Teamwork, Copyright &copy; 2019</p>
-                </footer> -->
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>
