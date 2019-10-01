@@ -3,23 +3,11 @@
 const ENV = require('dotenv');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const loginValidation = require('../helpers/signin');
 const users = require('../models/signup');
 
 ENV.config();
 
 const userLogin = (req, res) => {
-  const { error } = loginValidation.validation(req.body);
-
-  if (error) {
-    res.status(400).json({
-      status: 400,
-      error: error.details[0].message,
-    });
-
-    return;
-  }
-
   const checkUser = users.find((user) => user.email === req.body.email);
 
   if (!checkUser) {
@@ -59,14 +47,6 @@ const userLogin = (req, res) => {
     message: 'User is successfully logged in',
     data: {
       token,
-      id: checkUser.id,
-      first_name: checkUser.first_name,
-      last_name: checkUser.last_name,
-      email: checkUser.email,
-      gender: checkUser.gender,
-      jobRole: checkUser.jobRole,
-      department: checkUser.department,
-      address: checkUser.address,
     },
   });
 };
