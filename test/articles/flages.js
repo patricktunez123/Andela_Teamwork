@@ -4,6 +4,7 @@ const chai = require('chai');
 const { describe, it } = require('mocha');
 const http = require('chai-http');
 const jwt = require('jsonwebtoken');
+const mockData = require('../mockData/mockData');
 const app = require('../../server/index');
 
 chai.use(http);
@@ -21,20 +22,7 @@ describe('When a user wants to flag an article ', () => {
         done();
       });
   });
-
-  const payload = {
-    id: 2,
-    first_name: 'Patrick',
-    last_name: 'Tunezerwane',
-    email: 'tp3@gmail.com',
-    password: '$2b$10$Atnw/KEDHvmcSdNTRWfMfOZIOOQFOIynwjiYqGGZx3xtemaF6NGe6',
-    gender: 'Male',
-    jobRole: 'Manager',
-    department: 'ICT',
-    address: 'Kigali',
-    is_admin: false,
-  };
-  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '365d' });
+  const token = jwt.sign(mockData, process.env.JWT_KEY, { expiresIn: '365d' });
 
   it('should not be able to flag an article wich is not found', (done) => {
     chai.request(app)
