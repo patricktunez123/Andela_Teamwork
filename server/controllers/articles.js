@@ -26,6 +26,9 @@ const newArticlePost = (req, res) => {
     authorEmailId: req.user.email,
     title: req.body.title,
     article: req.body.article,
+    flags: [
+
+    ],
     comments: [
 
     ],

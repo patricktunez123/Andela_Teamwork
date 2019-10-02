@@ -6,6 +6,11 @@ const articles = [
     title: 'Today',
     article: 'Hello My Best Friends ! Today I Just Want Share With You This Nice Quote!:Self-Belief And Hard Work Will Always Earn You Success.',
     authorEmailId: 'a@gmail.com',
+    flags: [
+      {
+        flagNumber: 1,
+      },
+    ],
     comments: [
       {
         commentId: 1,
