@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import jwt from 'jsonwebtoken';
 import ENV from 'dotenv';
 

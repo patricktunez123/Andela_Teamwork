@@ -4,11 +4,11 @@
   "description": "Andela Developer Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha --require @babel/register --exit test/**/*.js",
+    "test": "nyc --reporter=html --reporter=text mocha --require babel-core/register --require babel-polyfill --exit test/**/*.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint js",
-    "build": "babel server/index.js --out-dir dist/ --ignore ./node_modules ",
-    "start": "babel-watch  dist/index.js"
+    "start": "node --require babel-core/register --require babel-polyfill ./server/index.js",
+    "dev-start": "nodemon --require babel-core/register --require babel-polyfill ./server/index.js"
   },
   "engines": {
     "node": "10.16.3"
@@ -24,12 +24,7 @@
   },
   "homepage": "https://github.com/patricktunez123/Andela_Teamwork#readme",
   "devDependencies": {
-    "@babel/cli": "^7.6.2",
-    "@babel/core": "^7.6.2",
-    "@babel/node": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "@babel/register": "^7.6.2",
-    "babel-watch": "^7.0.0",
+    "babel-cli": "^6.26.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "coveralls": "^3.0.6",
@@ -42,8 +37,11 @@
     "nyc": "^14.1.1"
   },
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
     "bcrypt": "^3.0.6",
-    "body-parser": "^1.19.0",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "joi": "^14.3.1",

@@ -1,18 +1,15 @@
-/* eslint-disable linebreak-style */
 import express from 'express';
-import bodyParser from 'body-parser';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from '../swagger.json';
-import signupRouter from '../server/routes/signup';
-import signin from '../server/routes/signin';
-import articles from '../server/routes/articles';
-import feeds from '../server/routes/feeds';
+import signupRouter from './routes/signup';
+import signin from './routes/signin';
+import articles from './routes/articles';
+import feeds from './routes/feeds';
 
 
 const app = express();
 
 app.use(express.json());
-app.use(bodyParser.json());
 
 app.use('/teamwork', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api/v1/auth/signup', signupRouter);

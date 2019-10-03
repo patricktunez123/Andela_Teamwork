@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import ENV from 'dotenv';
 import chai from 'chai';
 import { describe, it } from 'mocha';
