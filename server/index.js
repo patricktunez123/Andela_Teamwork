@@ -1,12 +1,12 @@
 /* eslint-disable linebreak-style */
-const express = require('express');
-const bodyParser = require('body-parser');
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('../swagger.json');
-const signupRouter = require('./routes/signup');
-const signin = require('./routes/signin');
-const articles = require('./routes/articles');
-const feeds = require('./routes/feeds');
+import express from 'express';
+import bodyParser from 'body-parser';
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from '../swagger.json';
+import signupRouter from '../server/routes/signup';
+import signin from '../server/routes/signin';
+import articles from '../server/routes/articles';
+import feeds from '../server/routes/feeds';
 
 
 const app = express();
@@ -25,4 +25,4 @@ app.listen(port, () => {
 });
 
 
-module.exports = app;
+export default app;

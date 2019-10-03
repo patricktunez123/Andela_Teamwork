@@ -1,11 +1,13 @@
 /* eslint-disable linebreak-style */
-require('dotenv').config();
-const chai = require('chai');
-const { describe, it } = require('mocha');
-const http = require('chai-http');
-const jwt = require('jsonwebtoken');
-const app = require('../../server/index');
+import ENV from 'dotenv';
+import chai from 'chai';
+import { describe, it } from 'mocha';
+import http from 'chai-http';
+import jwt from 'jsonwebtoken';
+import mockData from '../mockData/mockData';
+import app from '../../server/index';
 
+ENV.config();
 chai.use(http);
 chai.should();
 
@@ -20,20 +22,7 @@ describe('When admin needs to delete inappropriate article ', () => {
       });
   });
 
-  const Userpayload = {
-    id: 1,
-    first_name: 'Patrick',
-    last_name: 'Tunezerwane',
-    email: 'pat@gmail.com',
-    password: 'kgl123',
-    gender: 'Male',
-    jobRole: 'Manager',
-    department: 'ICT',
-    address: 'Kigali',
-    is_admin: false,
-  };
-
-  const token = jwt.sign(Userpayload, process.env.JWT_KEY, { expiresIn: '365d' });
+  const token = jwt.sign(mockData.userPayload, process.env.JWT_KEY, { expiresIn: '365d' });
 
   // it('should not be able to delete inappropriate article if not an admin', (done) => {
   //   chai.request(app)
@@ -49,17 +38,7 @@ describe('When admin needs to delete inappropriate article ', () => {
   //     });
   // });
 
-
-  const Adminpayload = {
-    id: 1,
-    first_name: 'tunez',
-    last_name: 'pat',
-    email: 'tunez@gmail.com',
-    address: 'Kigali',
-    is_admin: true,
-  };
-
-  const token2 = jwt.sign(Adminpayload, process.env.JWT_KEY, { expiresIn: '365d' });
+  const token2 = jwt.sign(mockData.adminPayload, process.env.JWT_KEY, { expiresIn: '365d' });
 
   // it('should be able to delete inappropriate article if you are the admin', (done) => {
   //   chai.request(app)

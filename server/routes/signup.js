@@ -1,10 +1,10 @@
 /* eslint-disable linebreak-style */
-const express = require('express');
-const signup = require('../controllers/signup');
+import express from 'express';
+import signup from '../controllers/signup';
 
 
 const router = express.Router();
 
 router.post('/', signup);
 
-module.exports = router;
+export default router;

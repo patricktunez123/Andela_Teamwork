@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-const Joi = require('joi');
+import Joi from 'joi';
 
 const commentOnArticle = {
   validation(cmt) {
@@ -10,4 +10,4 @@ const commentOnArticle = {
   },
 };
 
-module.exports = commentOnArticle;
+export default commentOnArticle;

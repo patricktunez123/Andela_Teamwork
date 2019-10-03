@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-const Joi = require('joi');
+import Joi from 'joi';
 
 const articlePost = {
 
@@ -14,4 +14,4 @@ const articlePost = {
 
 };
 
-module.exports = articlePost;
+export default articlePost;

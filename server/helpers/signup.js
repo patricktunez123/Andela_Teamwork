@@ -1,14 +1,18 @@
-const Joi = require('joi');
+/* eslint-disable linebreak-style */
+import Joi from 'joi';
 
 
 const register = {
 
   validation(user) {
     const uservalidation = {
-      first_name: Joi.string().min(2).max(20).required().trim(),
-      last_name: Joi.string().min(2).max(20).required().trim(),
+      first_name: Joi.string().min(2).max(20).required()
+        .trim(),
+      last_name: Joi.string().min(2).max(20).required()
+        .trim(),
       email: Joi.string().email().required().trim(),
-      password: Joi.string().min(5).max(10).required().trim(),
+      password: Joi.string().min(5).max(10).required()
+        .trim(),
       is_admin: Joi.boolean().strict().required(),
       gender: Joi.string().min(1).max(6).required(),
       jobRole: Joi.string().min(1).max(20).required(),
@@ -22,4 +26,4 @@ const register = {
 };
 
 
-module.exports = register;
+export default register;
