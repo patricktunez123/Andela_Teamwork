@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
-const articlePosted = require('../models/articles');
-
+import articlePosted from '../models/articles';
 
 const newFlag = (req, res) => {
   const paramId = parseInt(req.params.id, 10);
@@ -14,7 +13,7 @@ const newFlag = (req, res) => {
     });
   }
 
-  var flagId = 0;
+  let flagId = 0;
   if (checkPostedArticle.flags.length === 0) flagId = 1;
   else flagId = parseInt(checkPostedArticle.flags.length + 1, 10);
   const flagged = {
@@ -36,4 +35,4 @@ const newFlag = (req, res) => {
   });
 };
 
-module.exports = newFlag;
+export default newFlag;

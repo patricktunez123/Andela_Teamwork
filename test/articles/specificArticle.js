@@ -1,12 +1,13 @@
-/* eslint-disable no-trailing-spaces */
 /* eslint-disable linebreak-style */
-require('dotenv').config();
-const chai = require('chai');
-const { describe, it } = require('mocha');
-const http = require('chai-http');
-const jwt = require('jsonwebtoken');
-const app = require('../../server/index');
+import ENV from 'dotenv';
+import chai from 'chai';
+import { describe, it } from 'mocha';
+import http from 'chai-http';
+import jwt from 'jsonwebtoken';
+import mockData from '../mockData/mockData';
+import app from '../../server/index';
 
+ENV.config();
 chai.use(http);
 chai.should();
 
@@ -20,20 +21,7 @@ describe('When a user wants to view an article ', () => {
         done();
       });
   });
-
-  const payload = {
-    id: 1,
-    first_name: 'Patrick',
-    last_name: 'Tunezerwane',
-    email: 'tp@gmail.com',
-    password: '$2b$10$utvkNCuMn9aEsKCtnKDrfeKGuaElyOt.4bI3Seo3cFpsq8Ep.O0du',
-    gender: 'Male',
-    jobRole: 'Manager',
-    department: 'ICT',
-    address: 'Kigali',
-    is_admin: false,
-  };
-  const token = jwt.sign(payload, process.env.JWT_KEY, { expiresIn: '365d' });
+  const token = jwt.sign(mockData, process.env.JWT_KEY, { expiresIn: '365d' });
 
   it('should not be able to view an article which is not available ', (done) => {
     chai.request(app)

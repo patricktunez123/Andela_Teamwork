@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
-const articlePosted = require('../models/articles');
-const updatepostedarticle = require('../helpers/articlePost');
+import articlePosted from '../models/articles';
+import updatepostedarticle from '../helpers/articlePost';
 
 
 const newPostedArticle = (req, res) => {
@@ -52,4 +52,4 @@ const newPostedArticle = (req, res) => {
   }
 };
 
-module.exports = newPostedArticle;
+export default newPostedArticle;

@@ -1,10 +1,10 @@
 /* eslint-disable linebreak-style */
-const express = require('express');
+import express from 'express';
 
-const signin = require('../controllers/signin');
+import signin from '../controllers/signin';
 
 const router = express.Router();
 
 router.post('/', signin);
 
-module.exports = router;
+export default router;

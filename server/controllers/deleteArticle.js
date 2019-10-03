@@ -1,8 +1,8 @@
 /* eslint-disable linebreak-style */
-const articles = require('../models/articles');
+import articles from '../models/articles';
 
 const deleteArticle = (req, res) => {
-  const article = articles.find((ar) => ar.id === parseInt(req.params.id));
+  const article = articles.find((ar) => ar.id === parseInt(req.params.id, 10));
   if (!article) {
     return res.status(404).json({
       status: 404,
@@ -14,7 +14,7 @@ const deleteArticle = (req, res) => {
     const index = articles.indexOf(article);
     articles.splice(index, 1);
     return res.status(200).json({
-      status: 204,
+      status: 200,
       message: 'article successfully deleted',
     });
   }
@@ -29,4 +29,4 @@ const deleteArticle = (req, res) => {
   // checkPostedArticle.articleOwner = parseInt(req.body.id, 10);
 };
 
-module.exports = deleteArticle;
+export default deleteArticle;

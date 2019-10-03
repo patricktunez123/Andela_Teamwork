@@ -1,12 +1,12 @@
 /* eslint-disable linebreak-style */
-const express = require('express');
-const articles = require('../controllers/articles');
-const updatePostedArticle = require('../controllers/updatepostedarticle');
-const deleteArticle = require('../controllers/deleteArticle');
-const comments = require('../controllers/comments');
-const flag = require('../controllers/flag');
-const viewArticle = require('../controllers/viewArticle');
-const auth = require('../middleware/authorization');
+import express from 'express';
+import articles from '../controllers/articles';
+import updatePostedArticle from '../controllers/updatepostedarticle';
+import deleteArticle from '../controllers/deleteArticle';
+import comments from '../controllers/comments';
+import flag from '../controllers/flag';
+import viewArticle from '../controllers/viewArticle';
+import auth from '../middleware/authorization';
 
 const router = express.Router();
 
@@ -16,4 +16,5 @@ router.delete('/:id/', auth, deleteArticle);
 router.post('/:id/comments/', auth, comments);
 router.post('/:id', auth, flag);
 router.get('/:id/', auth, viewArticle);
-module.exports = router;
+
+export default router;

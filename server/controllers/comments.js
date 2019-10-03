@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
-const articlePosted = require('../models/articles');
-const commentOnArticle = require('../helpers/commentOnArticle');
+import articlePosted from '../models/articles';
+import commentOnArticle from '../helpers/commentOnArticle';
 
 
 const newComment = (req, res) => {
@@ -34,7 +34,7 @@ const newComment = (req, res) => {
   // }
 
   // checkPostedArticle.articleOwner = parseInt(req.body.id, 10);
-  var commentId = 0;
+  let commentId = 0;
   if (checkPostedArticle.comments.length === 0) commentId = 1;
   else commentId = parseInt(checkPostedArticle.comments.length + 1, 10);
   checkPostedArticle.comments.comment = req.body.comment;
@@ -49,7 +49,7 @@ const newComment = (req, res) => {
   checkPostedArticle.comments.push(cmt);
   return res.status(201).json({
     status: 201,
-    message: 'relevant-success-message',
+    message: 'Your comment was posted successfully',
     data: {
       created_on: checkPostedArticle.created_on,
       title: checkPostedArticle.title,
@@ -61,4 +61,4 @@ const newComment = (req, res) => {
   });
 };
 
-module.exports = newComment;
+export default newComment;

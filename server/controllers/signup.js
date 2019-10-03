@@ -1,9 +1,9 @@
 /* eslint-disable linebreak-style */
-const bcrypt = require('bcrypt');
-const ENV = require('dotenv');
-const jwt = require('jsonwebtoken');
-const userValidation = require('../helpers/signup');
-const users = require('../models/signup');
+import bcrypt from 'bcrypt';
+import ENV from 'dotenv';
+import jwt from 'jsonwebtoken';
+import userValidation from '../helpers/signup';
+import users from '../models/signup';
 
 
 ENV.config();
@@ -31,12 +31,12 @@ const signup = (req, res) => {
     return;
   }
 
-  var _id = 0;
-  if(users.length == 0) _id = 1;
-  else _id = parseInt(users.length + 1, 10);
+  let id = 0;
+  if (users.length === 0) id = 1;
+  else id = parseInt(users.length + 1, 10);
 
   const payload = {
-    id: _id,
+    id,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     email: req.body.email,
@@ -52,7 +52,7 @@ const signup = (req, res) => {
   const password = bcrypt.hashSync(req.body.password, 10);
 
   const newUser = {
-    id: _id,
+    id,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     email: req.body.email,
@@ -76,4 +76,4 @@ const signup = (req, res) => {
 };
 
 
-module.exports = signup;
+export default signup;

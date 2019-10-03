@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
-// const _ = require('lodash');
-const articlesArray = require('../models/articles');
+import articlesArray from '../models/articles';
 
 const viewArticle = (req, res) => {
   const article = articlesArray.find((ar) => ar.id === parseInt(req.params.id, 10));
@@ -20,4 +19,4 @@ const viewArticle = (req, res) => {
   }
 };
 
-module.exports = viewArticle;
+export default viewArticle;

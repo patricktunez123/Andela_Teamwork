@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
-const _ = require('lodash');
-const feedsArray = require('../models/articles');
+import _ from 'lodash';
+import feedsArray from '../models/articles';
 
 const feeds = (req, res) => {
   const descending = _.sortBy(feedsArray, 'created_on').reverse();
@@ -12,4 +12,4 @@ const feeds = (req, res) => {
   });
 };
 
-module.exports = feeds;
+export default feeds;

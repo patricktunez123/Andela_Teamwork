@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
-const moment = require('moment');
-const postValidation = require('../helpers/articlePost');
-const articlePost = require('../models/articles');
+import moment from 'moment';
+import postValidation from '../helpers/articlePost';
+import articlePost from '../models/articles';
 
 
 const newArticlePost = (req, res) => {
@@ -15,13 +15,13 @@ const newArticlePost = (req, res) => {
   }
 
 
-  var _id = 0;
-  if (articlePost.length === 0) _id = 1;
-  else _id = parseInt(articlePost.length + 1, 10);
+  let id = 0;
+  if (articlePost.length === 0) id = 1;
+  else id = parseInt(articlePost.length + 1, 10);
 
 
   const newArticle = {
-    id: _id,
+    id,
     created_on: moment().format('LL'),
     authorEmailId: req.user.email,
     title: req.body.title,
@@ -49,4 +49,4 @@ const newArticlePost = (req, res) => {
   });
 };
 
-module.exports = newArticlePost;
+export default newArticlePost;

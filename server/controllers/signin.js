@@ -1,9 +1,8 @@
-/* eslint-disable consistent-return */
 /* eslint-disable linebreak-style */
-const ENV = require('dotenv');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const users = require('../models/signup');
+import ENV from 'dotenv';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import users from '../models/signup';
 
 ENV.config();
 
@@ -52,4 +51,4 @@ const userLogin = (req, res) => {
 };
 
 
-module.exports = userLogin;
+export default userLogin;
