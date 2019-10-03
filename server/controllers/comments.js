@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import articlePosted from '../models/articles';
 import commentOnArticle from '../helpers/commentOnArticle';
 
@@ -25,16 +24,6 @@ const newComment = (req, res) => {
         error: 'Article was not found. Maybe it was removed',
       });
     }
-
-
-    // if (checkPostedArticle.articleOwner !== checkPostedArticle.id) {
-    //   return res.status(403).json({
-    //     status: 403,
-    //     error: 'Access Forbidden',
-    //   });
-    // }
-
-    // checkPostedArticle.articleOwner = parseInt(req.body.id, 10);
     let commentId = 0;
     if (checkPostedArticle.comments.length === 0) commentId = 1;
     else commentId = parseInt(checkPostedArticle.comments.length + 1, 10);
@@ -60,8 +49,8 @@ const newComment = (req, res) => {
         ],
       },
     });
-  } catch (e) {
-    return e;
+  } catch (err) {
+    return err;
   }
 };
 

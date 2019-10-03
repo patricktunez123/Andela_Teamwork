@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import _ from 'lodash';
 import feedsArray from '../models/articles';
 
@@ -11,8 +10,8 @@ const feeds = (req, res) => {
       data:
           descending,
     });
-  } catch (e) {
-    return e;
+  } catch (err) {
+    return err;
   }
 };
 

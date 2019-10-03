@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import moment from 'moment';
 import postValidation from '../helpers/articlePost';
 import articlePost from '../models/articles';
@@ -48,8 +47,8 @@ const newArticlePost = (req, res) => {
         article: req.body.article,
       },
     });
-  } catch (e) {
-    return e;
+  } catch (err) {
+    return err;
   }
 };
 

@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import articlePosted from '../models/articles';
 
 const newFlag = (req, res) => {
@@ -34,8 +33,8 @@ const newFlag = (req, res) => {
         ],
       },
     });
-  } catch (e) {
-    return e;
+  } catch (err) {
+    return err;
   }
 };
 

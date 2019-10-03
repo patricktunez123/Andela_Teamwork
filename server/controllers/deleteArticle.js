@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import articles from '../models/articles';
 
 const deleteArticle = (req, res) => {
@@ -19,17 +18,8 @@ const deleteArticle = (req, res) => {
         message: 'article successfully deleted',
       });
     }
-
-    // if (checkPostedArticle.articleOwner !== checkPostedArticle.id) {
-    //   return res.status(403).json({
-    //     status: 403,
-    //     error: 'Access Forbidden',
-    //   });
-    // }
-
-  // checkPostedArticle.articleOwner = parseInt(req.body.id, 10);
-  } catch (e) {
-    return e;
+  } catch (err) {
+    return err;
   }
 };
 

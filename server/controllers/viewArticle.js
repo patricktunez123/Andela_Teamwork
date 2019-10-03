@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import articlesArray from '../models/articles';
 
 const viewArticle = (req, res) => {
@@ -18,8 +17,8 @@ const viewArticle = (req, res) => {
               article,
       });
     }
-  } catch (e) {
-    return e;
+  } catch (err) {
+    return err;
   }
 };
 

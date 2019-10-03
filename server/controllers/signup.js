@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import bcrypt from 'bcrypt';
 import ENV from 'dotenv';
 import jwt from 'jsonwebtoken';
@@ -74,8 +73,8 @@ const signup = (req, res) => {
         token,
       },
     });
-  } catch (e) {
-    return e;
+  } catch (err) {
+    return err;
   }
 };
 

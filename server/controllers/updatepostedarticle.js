@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import articlePosted from '../models/articles';
 import updatepostedarticle from '../helpers/articlePost';
 
@@ -25,16 +24,6 @@ const newPostedArticle = (req, res) => {
         error: 'No such article was posted',
       });
     }
-
-
-    // if (checkPostedArticle.articleOwner !== checkPostedArticle.id) {
-    //   return res.status(403).json({
-    //     status: 403,
-    //     error: 'Access Forbidden',
-    //   });
-    // }
-
-    // checkPostedArticle.articleOwner = parseInt(req.body.id, 10);
     checkPostedArticle.title = req.body.title;
     checkPostedArticle.article = req.body.article;
     if (checkPostedArticle) {
@@ -51,8 +40,8 @@ const newPostedArticle = (req, res) => {
         },
       });
     }
-  } catch (e) {
-    return e;
+  } catch (err) {
+    return err;
   }
 };
 
