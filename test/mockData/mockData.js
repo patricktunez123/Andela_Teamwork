@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const mockData = {
   userPayload: {
     id: 2,

@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import express from 'express';
 import feeds from '../controllers/feeds';
 import auth from '../middleware/authorization';

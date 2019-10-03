@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import { describe, it } from 'mocha';
 import chai from 'chai';
 import http from 'chai-http';

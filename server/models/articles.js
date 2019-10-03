@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const articles = [
   {
     id: 1,

@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import express from 'express';
 import articles from '../controllers/articles';
 import updatePostedArticle from '../controllers/updatepostedarticle';
