@@ -15,7 +15,7 @@ describe('When a user is creating an article ', () => {
     chai.request(app)
       .post('/api/v1/articles')
       .send({
-        title: 'Today',
+        title: 'Today is a great day',
         article: 'Hello my best friends ! today i just want share with you this nice quote!:Self-belief and hard work will always earn you success.',
       })
       .end((err, res) => {
@@ -30,13 +30,13 @@ describe('When a user is creating an article ', () => {
       .post('/api/v1/articles')
       .set('x-auth-token', token)
       .send({
-        title: 'Today',
+        title: 'Today Is a cool day for sure',
         article: 'Hello my best friends ! today i just want share with you this nice quote!:Self-belief and hard work will always earn you success.',
       })
       .end((err, res) => {
-        res.should.have.status(200);
+        res.should.have.status(201);
         res.should.be.an('object');
-        res.body.should.have.property('status').eql(200);
+        res.body.should.have.property('status').eql(201);
         res.body.should.have.property('message');
         res.body.should.have.property('data');
         done();

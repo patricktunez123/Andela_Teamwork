@@ -77,21 +77,4 @@ describe('when a user is trying to update an article ', () => {
         done();
       });
   });
-
-  // it('should not be able to update if an article is found but the request is not from an article owner', (done) => {
-  //   chai.request(app)
-  //     .patch('/api/v1/articles/1')
-  //     .set('x-auth-token', token)
-  //     .send({
-  //       title: 'Today',
-  //       article: 'Hello my best friends ! today i just want share with you this nice quote!:Self-belief and hard work will always earn you success.',
-  //     })
-  //     .end((err, res) => {
-  //       res.should.have.status(403);
-  //       res.should.be.an('object');
-  //       res.body.should.have.property('status').eql(403);
-  //       res.body.should.have.property('error');
-  //       done();
-  //     });
-  // });
 });

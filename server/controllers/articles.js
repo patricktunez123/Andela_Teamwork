@@ -36,8 +36,8 @@ const newArticlePost = (req, res) => {
 
     articlePost.push(newArticle);
 
-    return res.status(200).json({
-      status: 200,
+    return res.status(201).json({
+      status: 201,
       message: 'article successfully created',
       data: {
         id: newArticle.id,
