@@ -1,12 +1,11 @@
-/* eslint-disable linebreak-style */
-const Joi = require('joi');
+import Joi from 'joi';
 
 const articlePost = {
 
   validation(newArticlePost) {
     const articlePostValidation = {
-      title: Joi.string().required().trim(),
-      article: Joi.string().required().trim(),
+      title: Joi.string().required().trim().min(3),
+      article: Joi.string().required().trim().min(3),
     };
 
     return Joi.validate(newArticlePost, articlePostValidation);
@@ -14,4 +13,4 @@ const articlePost = {
 
 };
 
-module.exports = articlePost;
+export default articlePost;

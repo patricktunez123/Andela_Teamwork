@@ -1,23 +1,25 @@
-/* eslint-disable linebreak-style */
-// const _ = require('lodash');
-const articlesArray = require('../models/articles');
+import articlesArray from '../models/articles';
 
 const viewArticle = (req, res) => {
-  const article = articlesArray.find((ar) => ar.id === parseInt(req.params.id, 10));
-  if (!article) {
-    return res.status(404).json({
-      status: 404,
-      error: 'The article was not found',
-    });
-  }
+  try {
+    const article = articlesArray.find((ar) => ar.id === parseInt(req.params.id, 10));
+    if (!article) {
+      return res.status(404).json({
+        status: 404,
+        error: 'The article was not found',
+      });
+    }
 
-  if (article) {
-    return res.status(200).json({
-      status: 200,
-      data:
+    if (article) {
+      return res.status(200).json({
+        status: 200,
+        data:
               article,
-    });
+      });
+    }
+  } catch (err) {
+    return err;
   }
 };
 
-module.exports = viewArticle;
+export default viewArticle;

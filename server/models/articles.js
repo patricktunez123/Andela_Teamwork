@@ -1,11 +1,15 @@
-/* eslint-disable linebreak-style */
 const articles = [
   {
     id: 1,
     created_on: '10/09/2019',
-    title: 'Today',
+    title: 'Today i would like to share with u this',
     article: 'Hello My Best Friends ! Today I Just Want Share With You This Nice Quote!:Self-Belief And Hard Work Will Always Earn You Success.',
     authorEmailId: 'a@gmail.com',
+    flags: [
+      {
+        flagNumber: 1,
+      },
+    ],
     comments: [
       {
         commentId: 1,
@@ -21,4 +25,4 @@ const articles = [
   },
 ];
 
-module.exports = articles;
+export default articles;

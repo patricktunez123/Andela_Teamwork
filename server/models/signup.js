@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const users = [
   {
     id: 1,
@@ -14,4 +13,4 @@ const users = [
   },
 ];
 
-module.exports = users;
+export default users;

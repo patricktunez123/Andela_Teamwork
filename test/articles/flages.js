@@ -10,11 +10,11 @@ ENV.config();
 chai.use(http);
 chai.should();
 
-describe('When a user wants to view an article ', () => {
-  it('should not be able to view an article when no token provided', (done) => {
+describe('When a user wants to flag an article ', () => {
+  it('should not be able to flag an article as inappropriate when no token', (done) => {
     chai.request(app)
-      .get('/api/v1/articles/1')
-      .send()
+      .post('/api/v1/articles/1')
+      .send(mockData.flaggedId)
       .end((err, res) => {
         res.should.have.status(401);
         done();
@@ -22,11 +22,11 @@ describe('When a user wants to view an article ', () => {
   });
   const token = jwt.sign(mockData, process.env.JWT_KEY, { expiresIn: '365d' });
 
-  it('should not be able to view an article which is not available ', (done) => {
+  it('should not be able to flag an article wich is not found', (done) => {
     chai.request(app)
-      .get('/api/v1/articles/9000')
+      .post('/api/v1/articles/80')
       .set('x-auth-token', token)
-      .send()
+      .send(mockData.flaggedId)
       .end((err, res) => {
         res.should.have.status(404);
         res.should.be.an('object');
@@ -34,18 +34,16 @@ describe('When a user wants to view an article ', () => {
         res.body.should.have.property('error');
         done();
       });
-  }); 
-
-  it('should be able to view an article', (done) => {
+  });
+  it('should be able to flag an article', (done) => {
     chai.request(app)
-      .get('/api/v1/articles/1')
+      .post('/api/v1/articles/1')
       .set('x-auth-token', token)
-      .send()
+      .send(mockData.flaggedId)
       .end((err, res) => {
         res.should.have.status(200);
-        res.should.be.an('object');
         res.body.should.have.property('status').eql(200);
-        res.body.should.have.property('data');
+        res.body.should.have.property('message');
         done();
       });
   });

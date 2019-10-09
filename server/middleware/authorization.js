@@ -1,6 +1,5 @@
-/* eslint-disable linebreak-style */
-const jwt = require('jsonwebtoken');
-const ENV = require('dotenv');
+import jwt from 'jsonwebtoken';
+import ENV from 'dotenv';
 
 ENV.config();
 
@@ -26,4 +25,4 @@ const authorize = (req, res, next) => {
   }
 };
 
-module.exports = authorize;
+export default authorize;
